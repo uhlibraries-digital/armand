@@ -10,7 +10,6 @@ end
 gem 'rails', '~> 5.1.6'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
-gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
@@ -54,9 +53,9 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
+gem 'hyrax', '3.0.0-beta1'
+gem 'pg'
 gem 'active-fedora', '>= 11.1.4'
 gem 'blacklight', '~> 6.7'
 gem 'rsolr', '~> 2.0'
 gem 'config', '~> 1.5', '>= 1.5.1'
-
-gem 'hyrax', '3.0.0-beta1'
