@@ -53,9 +53,21 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'hyrax', '3.0.0-beta1'
 gem 'pg'
-gem 'active-fedora', '>= 11.1.4'
-gem 'blacklight', '~> 6.7'
-gem 'rsolr', '~> 2.0'
-gem 'config', '~> 1.5', '>= 1.5.1'
+gem 'hyrax', '3.0.0-beta1'
+group :development, :test do
+  gem 'solr_wrapper', '>= 0.3'
+end
+
+gem 'rsolr', '>= 1.0'
+gem 'bootstrap-sass', '~> 3.0'
+gem 'twitter-typeahead-rails', '0.11.1.pre.corejavascript'
+gem 'jquery-rails'
+gem 'devise'
+gem 'devise-guests', '~> 0.6'
+group :development, :test do
+  gem 'fcrepo_wrapper'
+  gem 'rspec-rails'
+end
+
+gem 'riiif', '~> 2.0'
