@@ -56,3 +56,35 @@ en:
     institution_name_full: The Institution Name
     product_name: Hyrax
     product_twitter_handle: "@SamveraRepo"
+  simple_form:
+    hints:
+      defaults:
+        alternative: An alternative name for the resource.
+        aspaceurl: The URI in ArchivesSpace that identifies the archival object in which the resource is contained.
+        contributor: An entity responsible for making contributions to the resource.
+        creator: An entity primarily responsible for making the resource.
+        date: A point or period of time associated with an event in the lifecycle of the resource.
+        description: An account of the resource.
+        donor: A former owner of an item who donated that item to another owner.
+        extent: The size or duration of the resource.
+        format: The file format, physical medium, or dimensions of the resource.
+        genre: The identifier of a concept, or a word or phrase from a controlled vocabulary (thesaurus etc) giving the type of the CHO.
+        identifier: An unambiguous reference to the resource within a given context.
+        language: A language of the resource.
+        note: Additional information about the described resource.
+        place: Spatial characteristics of the resource.
+        preservation_location: A related resource from which the described resource is derived.
+        publisher: An entity responsible for making the resource available.
+        resource_access_rights: Information about who can access the resource or an indication of its security status.
+        rights_statement: Information about rights held in and over the resource.
+        resource_type: The nature or genre of the resource.
+        series_title: Resource in which the described resource is physically or logically contained.
+        subject: The topic of the resource.
+        time_period: Temporal characteristics of the resource.
+    labels:
+      defaults:
+        alternative: Alternative Title
+        aspaceurl: ArchivesSpace Uri
+        description: Description
+        resource_access_rights: Access Rights
+        rights_statement: Rights
