@@ -12,4 +12,12 @@ class ApplicationController < ActionController::Base
 
 
   protect_from_forgery with: :exception
+
+  before_action :require_active_account!
+
+  private
+
+    def require_active_account!
+    end
+
 end

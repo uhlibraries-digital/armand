@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Hybridge::Engine => '/hybridge'
+
   
   mount Riiif::Engine => 'images', as: :riiif if Hyrax.config.iiif_image_server?
   mount Blacklight::Engine => '/'

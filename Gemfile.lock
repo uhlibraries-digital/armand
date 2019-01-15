@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/uhlibraries-digital/hybridge.git
+  revision: b4b05b9829e35228806216d36c638342da29eb03
+  specs:
+    hybridge (0.2.0.pre.beta.4)
+      config
+      rails (~> 5.1.6)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -363,7 +371,7 @@ GEM
       signet
       simple_form (~> 3.2, <= 3.5.0)
       tinymce-rails (~> 4.1)
-    i18n (1.5.1)
+    i18n (1.5.2)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     iiif-image-api (0.1.0)
@@ -487,7 +495,7 @@ GEM
     noid-rails (3.0.1)
       actionpack (>= 5.0.0, < 6)
       noid (~> 0.9)
-    nokogiri (1.10.0)
+    nokogiri (1.10.1)
       mini_portile2 (~> 2.4.0)
     nokogumbo (1.5.0)
       nokogiri
@@ -773,6 +781,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.6)
   fcrepo_wrapper
+  hybridge!
   hyrax (= 3.0.0.pre.beta1)
   jbuilder (~> 2.5)
   jquery-rails
