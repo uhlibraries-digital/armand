@@ -88,3 +88,4 @@ en:
         description: Description
         resource_access_rights: Access Rights
         rights_statement: Rights
+        resource_type: Type
