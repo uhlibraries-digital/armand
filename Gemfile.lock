@@ -371,7 +371,7 @@ GEM
       signet
       simple_form (~> 3.2, <= 3.5.0)
       tinymce-rails (~> 4.1)
-    i18n (1.5.2)
+    i18n (1.5.3)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
     iiif-image-api (0.1.0)
@@ -788,6 +788,7 @@ DEPENDENCIES
   devise
   devise-guests (~> 0.6)
   fcrepo_wrapper
+  font-awesome-rails (~> 4.7)
   hybridge!
   hyrax (= 3.0.0.pre.beta1)
   jbuilder (~> 2.5)
