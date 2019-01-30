@@ -15,3 +15,15 @@
 @import "blacklight_gallery/osd_viewer";
 @import 'hyrax/hyrax';
 @import 'hyrax/login_signup';
+
+.sidebar {
+  .profile {
+    .profile-logout {
+      text-align: center;
+
+      a {
+        padding-left: 0 !important;
+      }
+    }
+  }
+}
