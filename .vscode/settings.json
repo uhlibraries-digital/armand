@@ -1,0 +1,14 @@
+{
+  "search.exclude": {
+    "**/tmp": true,
+    "**/log": true
+  },
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/.DS_Store": true
+  },
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true
+}
