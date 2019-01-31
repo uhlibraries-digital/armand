@@ -36,9 +36,19 @@ module Bcdams
       end
     
       property :resource_access_rights, predicate: ::RDF::Vocab::DC.accessRights, multiple: false
-      property :aspaceurl, predicate: ::RDF::URI.new("https://vocab.lib.uh.edu/bcdams-map#aSpaceUri"), multiple: false
-      property :donor, predicate: ::RDF::URI.new("http://id.loc.gov/vocabulary/relators/dnr")
-      property :note, predicate: ::RDF::URI.new("https://vocab.lib.uh.edu/bcdams-map#note")
+      
+      property :aspaceurl, predicate: ::RDF::URI.new("https://vocab.lib.uh.edu/bcdams-map#aSpaceUri"), multiple: false  do |index|
+        index.as :stored_searchable
+      end
+      
+      property :donor, predicate: ::RDF::URI.new("http://id.loc.gov/vocabulary/relators/dnr") do |index|
+        index.as :stored_searchable
+      end
+
+      property :note, predicate: ::RDF::URI.new("https://vocab.lib.uh.edu/bcdams-map#note") do |index|
+        index.as :stored_searchable
+      end
+
       property :preservation_location, predicate: ::RDF::Vocab::DC.source, multiple: false
     end
 
