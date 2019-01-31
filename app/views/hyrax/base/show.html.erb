@@ -1,0 +1,28 @@
+<% provide :page_title, @presenter.page_title %>
+
+<div class="row work-type">
+  <div itemscope itemtype="http://schema.org/CreativeWork" class="col-xs-12">
+    <%= render 'work_title', presenter: @presenter %>
+    <%= render 'show_actions', presenter: @presenter %>
+    <div class="work-type-body row">
+      <%= render 'workflow_actions_widget', presenter: @presenter %>
+      <% if @presenter.iiif_viewer? %>
+        <div class="col-sm-12">
+          <%= render 'representative_media', presenter: @presenter, viewer: true %>
+        </div>
+      <% end %>
+      <div class="col-sm-7">
+        <%= render 'representative_media', presenter: @presenter, viewer: false unless @presenter.iiif_viewer? %>
+      </div>
+      <div class="col-sm-5">
+        <%= render 'short_metadata', presenter: @presenter %>
+        <%= render 'social_media', presenter: @presenter %>
+      </div>
+    </div>
+
+    <div class="work-type-extensions row">
+      <%= render 'extensions', presenter: @presenter %>
+    </div>
+
+  </div>
+</div>

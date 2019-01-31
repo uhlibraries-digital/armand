@@ -1,0 +1,6 @@
+<div class="access-rights">
+  <%= presenter.attribute_to_html(:rights_statement, render_as: :rights_statement, label: t('Rights:')) %>
+</div>
+<div class="finding-aid">
+  <%= link_to("View item in finding aid", presenter.aspaceurl.last) unless presenter.aspaceurl.blank? %>
+</div>

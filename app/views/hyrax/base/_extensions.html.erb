@@ -1,0 +1,36 @@
+<ul class="nav nav-tabs work-type-tabs" role="tablist">
+  <li role="resentation" class="active">
+    <a href="#access" aria-controls="access" role="tab" data-toggle="tab" aria-expanded="false">
+      Access
+    </a>
+  </li>
+  <li role="resentation">
+    <a href="#metadata" aria-controls="metadata" role="tab" data-toggle="tab" aria-expanded="false">
+      Full Metadata
+    </a>
+  </li>
+  <li role="resentation">
+    <a href="#related" aria-controls="related" role="tab" data-toggle="tab" aria-expanded="false">
+      Related Items
+    </a>
+  </li>
+  <li role="resentation">
+    <a href="#citation" aria-controls="citation" role="tab" data-toggle="tab" aria-expanded="false">
+      Citation
+    </a>
+  </li>
+</ul>
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane active" id="access">
+    <%= render 'tab_access', presenter: presenter %>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="metadata">
+    <%= render 'tab_metadata', presenter: presenter %>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="related">
+    <%= render 'tab_related_items', presenter: presenter %>
+  </div>
+  <div role="tabpanel" class="tab-pane" id="citation">
+    <%= render 'tab_citation', presenter: presenter %>
+  </div>
+</div>
