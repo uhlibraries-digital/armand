@@ -5,14 +5,6 @@ html {
   font-size: 16px;
 }
 
-body {
-  margin-bottom: 0;
-
-  &.dashboard {
-    padding-top: 0;
-  }
-}
-
 a {
   color: $red;
 }
@@ -57,20 +49,18 @@ h3 {
   border-color: $chocolate;
 }
 
-.btn-primary, 
-.field-controls 
-.add, 
-td.toggle input[type=submit].active, 
+.btn-primary,
+.field-controls .add,
+td.toggle input[type=submit].active,
 form.new_user input[type='submit'] {
   color: $white;
   background-color: $red;
   border-color: $brick;
 }
 
-.btn-primary:hover, 
-.field-controls 
-.add:hover, 
-td.toggle input[type=submit].active:hover, 
+.btn-primary:hover,
+.field-controls .add:hover,
+td.toggle input[type=submit].active:hover,
 form.new_user input[type='submit']:hover {
   color: $white;
   background-color: $brick;
@@ -213,7 +203,7 @@ form.new_user input[type='submit']:hover {
           font-size: calc(22px + (44 - 22) * (100vw - 320px) / (992 - 320));
         }
       }
-      
+
     }
   }
 
@@ -350,7 +340,7 @@ form.new_user input[type='submit']:hover {
     border: none;
 
     .navbar-nav {
-      & > .active > a {
+      &>.active>a {
         background-color: transparent;
       }
 

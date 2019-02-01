@@ -17,6 +17,15 @@
 @import 'hyrax/login_signup';
 @import 'variables';
 
+
+body {
+  margin-bottom: 0;
+
+  &.dashboard {
+    padding-top: 0;
+  }
+}
+
 .sidebar {
   .profile {
     .profile-logout {
@@ -26,6 +35,15 @@
         padding-left: 0 !important;
       }
     }
+  }
+}
+
+.alert-message {
+  margin: -20px 0 20px 0;
+
+  .alert {
+    margin: 0;
+    border-radius: 0;
   }
 }
 
