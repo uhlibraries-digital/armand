@@ -20,11 +20,11 @@ module Bcdams
       end
     
       property :genre, predicate: ::RDF::URI.new("http://www.europeana.eu/schemas/edm/hasType") do |index|
-        index.as :stored_searchable
+        index.as :stored_searchable, :facetable
       end
     
       property :place, predicate: ::RDF::Vocab::DC.spatial do |index|
-        index.as :stored_searchable
+        index.as :stored_searchable, :facetable
       end
     
       property :series_title, predicate: ::RDF::Vocab::BF2.partOf do |index|
@@ -32,7 +32,7 @@ module Bcdams
       end
     
       property :time_period, predicate: ::RDF::Vocab::DC.temporal do |index|
-        index.as :stored_searchable
+        index.as :stored_searchable, :facetable
       end
     
       property :resource_access_rights, predicate: ::RDF::Vocab::DC.accessRights, multiple: false

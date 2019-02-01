@@ -48,6 +48,9 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name("keyword", :facetable), limit: 5
     config.add_facet_field solr_name("subject", :facetable), limit: 5
     config.add_facet_field solr_name("language", :facetable), limit: 5
+    config.add_facet_field solr_name("place", :facetable), label: "Place", limit: 5
+    config.add_facet_field solr_name("genre", :facetable), label: "Genre", limit: 5
+    config.add_facet_field solr_name("time_period", :facetable), label: "Time Period", limit: 5
     config.add_facet_field solr_name("based_near_label", :facetable), limit: 5
     config.add_facet_field solr_name("publisher", :facetable), limit: 5
     config.add_facet_field solr_name("file_format", :facetable), limit: 5
@@ -85,6 +88,9 @@ class CatalogController < ApplicationController
     config.add_index_field solr_name("identifier", :stored_searchable), helper_method: :index_field_link, field_name: 'identifier'
     config.add_index_field solr_name("embargo_release_date", :stored_sortable, type: :date), label: "Embargo release date", helper_method: :human_readable_date
     config.add_index_field solr_name("lease_expiration_date", :stored_sortable, type: :date), label: "Lease expiration date", helper_method: :human_readable_date
+    #config.add_index_field solr_name("genre", :stored_searchable), label: "Genre", itemprop: 'genre', link_to_search: solr_name("genre", :facetable)
+    #config.add_index_field solr_name("place", :stored_searchable), label: "Place", itemprop: 'place', link_to_search: solr_name("place", :facetable)
+    #config.add_index_field solr_name("time_period", :stored_searchable), label: "Time Period", itemprop: 'time_period', link_to_search: solr_name("time_period", :facetable)
 
     # solr fields to be displayed in the show (single result) view
     #   The ordering of the field names is the order of the display
@@ -97,6 +103,9 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name("publisher", :stored_searchable)
     config.add_show_field solr_name("based_near_label", :stored_searchable)
     config.add_show_field solr_name("language", :stored_searchable)
+    config.add_show_field solr_name("genre", :stored_searchable)
+    config.add_show_field solr_name("place", :stored_searchable)
+    config.add_show_field solr_name("time_period", :stored_searchable)
     config.add_show_field solr_name("date_uploaded", :stored_searchable)
     config.add_show_field solr_name("date_modified", :stored_searchable)
     config.add_show_field solr_name("date_created", :stored_searchable)
