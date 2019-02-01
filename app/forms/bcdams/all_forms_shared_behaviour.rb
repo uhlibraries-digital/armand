@@ -24,6 +24,19 @@ module Bcdams
       # Remove terms
       self.terms -= [:keyword, :source, :based_near, :license, :date_created]
       self.required_fields -= [:keyword, :creator]
+
+      self.field_metadata_service = BcdamsMetadataService
+
+      def title
+        super.first || ""
+      end
+
+      def self.model_attributes(_)
+        attrs = super
+        attrs[:title] = Array(attrs[:title]) if attrs[:title]
+        attrs
+      end
+
     end
   end
 end
