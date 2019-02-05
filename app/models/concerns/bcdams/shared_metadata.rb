@@ -49,7 +49,12 @@ module Bcdams
         index.as :stored_searchable
       end
 
+      property :related_item, predicate: ::RDF::Vocab::DC.relation do |index|
+        index.as :stored_searchable
+      end
+
       property :preservation_location, predicate: ::RDF::Vocab::DC.source, multiple: false
+
     end
 
   end

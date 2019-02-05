@@ -38,5 +38,6 @@ class SolrDocument
   attribute :aspaceurl, Solr::Array, solr_name('aspaceurl')
   attribute :donor, Solr::Array, solr_name('donor')
   attribute :note, Solr::Array, solr_name('note')
+  attribute :related_item, Solr::Array, solr_name('related_item')
 
 end

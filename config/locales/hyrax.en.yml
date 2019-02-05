@@ -81,6 +81,7 @@ en:
         series_title: Resource in which the described resource is physically or logically contained.
         subject: The topic of the resource.
         time_period: Temporal characteristics of the resource.
+        related_item: A related resource.
     labels:
       defaults:
         alternative: Alternative Title

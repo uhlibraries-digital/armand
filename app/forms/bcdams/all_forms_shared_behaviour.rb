@@ -17,12 +17,13 @@ module Bcdams
         :aspaceurl,
         :donor,
         :note,
+        :related_item,
         :preservation_location
       ]
       self.required_fields += [:resource_access_rights]
 
       # Remove terms
-      self.terms -= [:keyword, :source, :based_near, :license, :date_created]
+      self.terms -= [:keyword, :source, :based_near, :license, :date_created, :related_url]
       self.required_fields -= [:keyword, :creator]
 
       self.field_metadata_service = BcdamsMetadataService
