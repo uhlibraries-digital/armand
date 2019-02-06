@@ -24,4 +24,4 @@ These dependencies are required to run both Armand and the Hyrax stack.
 
 ## License
 
-**[Apache-2.0](LICENSE)**
+**[Apache-2.0](LICENSE.txt)**
