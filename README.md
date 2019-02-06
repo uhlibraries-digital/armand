@@ -1,6 +1,6 @@
 # Armand
 
-Armand is digital repository based on [Hyrax](https://github.com/samvera/hyrax)
+Armand is a digital repository based on [Hyrax](https://github.com/samvera/hyrax)
 
 ## Installation
 
