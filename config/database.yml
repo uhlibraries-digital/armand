@@ -26,4 +26,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: armand
+  encoding: unicode
+  pool: 50
