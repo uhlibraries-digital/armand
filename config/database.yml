@@ -21,7 +21,7 @@ development:
 test:
   <<: *default
   database: armand_test
-  encoding: uicode
+  encoding: unicode
   pool: 50
 
 production:
