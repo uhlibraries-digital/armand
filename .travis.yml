@@ -8,8 +8,9 @@ before_install:
 
 before_script:
   - bundle exec rake db:setup RAILS_ENV=test
-  - solr_wrapper -v -d solr/config/ -n hydra-test -p 8985
-  - fcrepo_wrapper -v -p 8986 --no-jms
+
+script:
+  - bundle exec rake ci
 
 cache:
   bundler: true
