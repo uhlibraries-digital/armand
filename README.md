@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/uhlibraries-digital/armand.svg?branch=master)](https://travis-ci.org/uhlibraries-digital/armand)
 [![Maintainability](https://api.codeclimate.com/v1/badges/337265c2bcfccf23da0a/maintainability)](https://codeclimate.com/github/uhlibraries-digital/armand/maintainability)
-[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://raw.githubusercontent.com/Bridge2Hyku/cdm-bridge/master/LICENSE)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://raw.githubusercontent.com/uhlibraries-digital/armand/master/LICENSE.txt)
 
 Armand is a digital repository based on [Hyrax](https://github.com/samvera/hyrax)
 
