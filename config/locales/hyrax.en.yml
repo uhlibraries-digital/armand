@@ -82,6 +82,7 @@ en:
         subject: The topic of the resource.
         time_period: Temporal characteristics of the resource.
         related_item: A related resource.
+        digital_object_ark: The URL to the digital object on the provider’s web site in its full information context.
     labels:
       defaults:
         alternative: Alternative Title
@@ -90,3 +91,4 @@ en:
         resource_access_rights: Access Rights
         rights_statement: Rights
         resource_type: Type
+        digital_object_ark: Digital Object ARK

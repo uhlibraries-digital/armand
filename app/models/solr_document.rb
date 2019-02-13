@@ -39,5 +39,6 @@ class SolrDocument
   attribute :donor, Solr::Array, solr_name('donor')
   attribute :note, Solr::Array, solr_name('note')
   attribute :related_item, Solr::Array, solr_name('related_item')
+  attribute :digital_object_ark, Solr::Array, solr_name('digital_object_ark')
 
 end

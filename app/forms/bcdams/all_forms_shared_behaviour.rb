@@ -15,6 +15,7 @@ module Bcdams
         :time_period,
         :resource_access_rights,
         :aspaceurl,
+        :digital_object_ark,
         :donor,
         :note,
         :related_item,
