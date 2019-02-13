@@ -45,6 +45,7 @@ RSpec.feature 'Create a Image', js: false do
       fill_in('Title', with: 'My Test Work', :match => :prefer_exact)
       fill_in('Access Rights', with: 'Public', :match => :prefer_exact)
       fill_in('Digital Object ARK', with: 'ark:/ABC/123', :match => :prefer_exact)
+      fill_in('Rights Holder', with: 'ABCD', :match => :prefer_exact)
       select('In Copyright', from: 'Rights', :match => :prefer_exact)
 
        # With selenium and the chrome driver, focus remains on the

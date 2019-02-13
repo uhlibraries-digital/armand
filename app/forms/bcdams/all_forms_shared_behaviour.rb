@@ -19,7 +19,8 @@ module Bcdams
         :donor,
         :note,
         :related_item,
-        :preservation_location
+        :preservation_location,
+        :rights_holder
       ]
       self.required_fields += [:resource_access_rights]
 

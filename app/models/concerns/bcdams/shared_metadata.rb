@@ -58,6 +58,11 @@ module Bcdams
       property :digital_object_ark, predicate: ::RDF::URI.new("http://www.europeana.eu/schemas/edm/isShownAt") do |index|
         index.as :stored_searchable 
       end 
+
+      property :rights_holder, predicate: ::RDF::Vocab::DC.rightsHolder do |index|
+        index.as :stored_searchable 
+      end
+
     end
   end
 end

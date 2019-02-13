@@ -40,5 +40,6 @@ class SolrDocument
   attribute :note, Solr::Array, solr_name('note')
   attribute :related_item, Solr::Array, solr_name('related_item')
   attribute :digital_object_ark, Solr::Array, solr_name('digital_object_ark')
+  attribute :rights_holder, Solr::Array, solr_name('rights_holder')
 
 end
