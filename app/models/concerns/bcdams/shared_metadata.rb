@@ -55,7 +55,7 @@ module Bcdams
 
       property :preservation_location, predicate: ::RDF::Vocab::DC.source, multiple: false
       
-      property :digital_object_ark, predicate: ::RDF::URI.new("http://www.europeana.eu/schemas/edm/isShownAt") do |index|
+      property :digital_object_ark, predicate: ::RDF::URI.new("http://www.europeana.eu/schemas/edm/isShownAt"), multiple: false do |index|
         index.as :stored_searchable 
       end 
 
