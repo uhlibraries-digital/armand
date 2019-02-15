@@ -1,3 +1,3 @@
-GreensClient::Ark.base_url = Settings.greens.endpoint
-GreensClient::Ark.prefix = Settings.greens.prefix
-GreensClient::Ark.api_key = Settings.greens.api_key
+GreensClient::Ark.base_url = Settings.greens.endpoint ||= nil
+GreensClient::Ark.prefix = Settings.greens.prefix ||= nil
+GreensClient::Ark.api_key = Settings.greens.api_key ||= nil
