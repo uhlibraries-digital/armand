@@ -173,14 +173,10 @@ body {
           padding: 10px 0;
           font-size: 1rem;
 
-          span {
-            display: inline-block;
-            font-weight: bolder;
-          }
-
           ul {
-            display: inline-block;
-            margin-left: 5px;
+            margin: 0;
+            padding: 0;
+            margin-left: 20px;
           }
         }
       }
