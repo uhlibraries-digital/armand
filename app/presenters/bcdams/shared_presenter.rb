@@ -1,6 +1,7 @@
 module Bcdams
   module SharedPresenter
     extend ActiveSupport::Concern
+    require 'edtf-humanize'
     
     included do
       delegate :alternative, :date, :extent, :format, :genre,
@@ -12,6 +13,15 @@ module Bcdams
       def permalink
         return Settings.greens.base_url + digital_object_ark.first unless digital_object_ark.first.nil? || digital_object_ark.first.blank?
         request.original_url
+      end
+
+      def humanize_date
+        begin
+          date.collect {|d| Date.edtf(d).humanize}
+        rescue NoMethodError => e
+          Rails.logger.error(e)
+          date
+        end
       end
     
     end
