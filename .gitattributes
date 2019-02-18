@@ -2,9 +2,11 @@
 *.png binary
 *.jpg binary
 *.jpeg binary
+*.svg binary
 *.ico binary
 *.icns binary
 *.eot binary
 *.ttf binary
 *.woff binary
 *.woff2 binary
+*.otf binary
