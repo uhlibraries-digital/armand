@@ -47,6 +47,30 @@ body {
   }
 }
 
+.metadata-table {
+  width: 100%;
+
+  td, th {
+    padding: 1rem 0;
+    vertical-align: top;
+    border-bottom: 1px solid $border;
+  }
+  th {
+    width: 20%;
+  }
+  td {
+    width: 80%;
+  }
+  th:after {
+    content: ":"
+  }
+  ul.tabular {
+    margin: 0;
+    padding: 0;
+    margin-left: 20px;
+  }
+}
+
 .work-type {
   margin-top: -20px;
   margin-bottom: 3.375rem;
@@ -88,37 +112,12 @@ body {
     font-size: 1.25rem;
     margin-bottom: 2.25rem;
 
-    dt,
-    dd {
-      border-bottom: 1px solid $border;
-      padding: 1rem 0;
-    }
-
-    dt {
-      flex-basis: 22%;
-
-      &:after {
-        content: ":";
-      }
-    }
-
-    dd {
-      flex-basis: 60%;
-      flex-grow: 1;
-
-      ul {
-        margin: 0;
-        padding: 0;
-        margin-left: 10px;
-        overflow: hidden;
-
-        li {
-          float: left;
-
-          &:not(:last-child):after {
-            content: "; ";
-            margin-right: 5px;
-          }
+    .metadata-table {
+      li {
+        float: left;
+        &:not(:last-child):after {
+          content: "; ";
+          margin-right: 5px;
         }
       }
     }
@@ -173,6 +172,10 @@ body {
           padding: 10px 0;
           font-size: 1rem;
 
+          th, td {
+            padding-bottom: 20px;
+          }
+
           ul {
             margin: 0;
             padding: 0;
@@ -190,34 +193,7 @@ body {
           display: flex;
         }
 
-        dt,
-        dd {
-          border-bottom: 1px solid $border;
-          padding: 1rem 0;
-        }
-
-        dt {
-          flex-basis: 20%;
-
-          &:after {
-            content: ":";
-          }
-        }
-
-        dd {
-          flex-basis: 70%;
-          flex-grow: 1;
-
-          ul {
-            margin: 0;
-            padding: 0;
-            margin-left: 10px;
-            overflow: hidden;
-          }
-        }
-
       }
     }
   }
-
 }

@@ -1,7 +1,9 @@
-<%= presenter.attribute_to_html(:creator, render_as: :faceted, html_dl: true) %>
-<%= presenter.attribute_to_html(:subject, render_as: :faceted, html_dl: true) %>
-<%= presenter.attribute_to_html(:place, render_as: :faceted, html_dl: true) %>
-<%= presenter.attribute_to_html(:genre, render_as: :faceted,  html_dl: true) %>
-<%= presenter.attribute_to_html(:time_period, render_as: :faceted,  html_dl: true) %>
-<%= presenter.attribute_to_html(:resource_type, render_as: :faceted, html_dl: true, label: t('Type')) %>
-<%= presenter.attribute_to_html(:language, render_as: :faceted, html_dl: true) %>
+<table class="metadata-table">
+  <%= presenter.attribute_to_html(:creator, render_as: :faceted) %>
+  <%= presenter.attribute_to_html(:subject, render_as: :faceted) %>
+  <%= presenter.attribute_to_html(:place, render_as: :faceted) %>
+  <%= presenter.attribute_to_html(:genre, render_as: :faceted) %>
+  <%= presenter.attribute_to_html(:time_period, render_as: :faceted) %>
+  <%= presenter.attribute_to_html(:resource_type, render_as: :faceted, label: t('simple_form.labels.defaults.resource_type')) %>
+  <%= presenter.attribute_to_html(:language, render_as: :faceted) %>
+</table>
