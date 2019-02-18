@@ -59,6 +59,7 @@ en:
     base:
       social_media:
         pinterest: Pinterest
+        linkedin: LinkedIn
   simple_form:
     hints:
       defaults:
