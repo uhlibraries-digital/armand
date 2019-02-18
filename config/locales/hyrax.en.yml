@@ -56,6 +56,9 @@ en:
     institution_name_full: University of Houston Libraries
     product_name: Digital Library
     product_twitter_handle: "@UHoustonLib"
+    base:
+      social_media:
+        pinterest: Pinterest
   simple_form:
     hints:
       defaults:
