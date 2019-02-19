@@ -12,3 +12,6 @@ greens:
   endpoint: http://example.com/api/
   prefix: do
   api_key: 0000
+
+active_job:
+  queue_adapter: :sidekiq

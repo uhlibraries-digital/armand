@@ -1,0 +1,3 @@
+:concurrency: 8
+development:
+  :concurrency: 2
