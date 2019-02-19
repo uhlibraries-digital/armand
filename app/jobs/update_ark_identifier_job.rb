@@ -1,5 +1,5 @@
 class UpdateArkIdentifierJob < ActiveJob::Base
-  queue_as :update_ark_identifier
+  queue_as Hyrax.config.ingest_queue_name
 
   def perform(ark_id, erc_where)
     ark = GreensClient::Ark.new
