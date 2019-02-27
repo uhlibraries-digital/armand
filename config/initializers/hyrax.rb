@@ -138,7 +138,7 @@ Hyrax.config do |config|
   #   * iiif_image_size_default
   #
   # Default is false
-  # config.iiif_image_server = false
+  config.iiif_image_server = true
 
   # Returns a URL that resolves to an image provided by a IIIF image server
   config.iiif_image_url_builder = lambda do |file_id, base_url, size|
@@ -158,13 +158,13 @@ Hyrax.config do |config|
   # end
 
   # Returns a URL that indicates your IIIF image server compliance level
-  # config.iiif_image_compliance_level_uri = 'http://iiif.io/api/image/2/level2.json'
+  config.iiif_image_compliance_level_uri = 'http://iiif.io/api/image/2/level2.json'
 
   # Returns a IIIF image size default
-  # config.iiif_image_size_default = '600,'
+  config.iiif_image_size_default = '600,'
 
   # Fields to display in the IIIF metadata section; default is the required fields
-  # config.iiif_metadata_fields = Hyrax::Forms::WorkForm.required_fields
+  config.iiif_metadata_fields = Hyrax::Forms::WorkForm.required_fields
 
   # Should a button with "Share my work" show on the front page to all users (even those not logged in)?
   # config.display_share_button_when_not_logged_in = true
