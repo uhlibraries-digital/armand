@@ -6,13 +6,8 @@
     <%= render 'show_actions', presenter: @presenter %>
     <div class="work-type-body row">
       <%= render 'workflow_actions_widget', presenter: @presenter %>
-      <% if @presenter.iiif_viewer? %>
-        <div class="col-sm-12">
-          <%= render 'representative_media', presenter: @presenter, viewer: true %>
-        </div>
-      <% end %>
       <div class="col-sm-7">
-        <%= render 'representative_media', presenter: @presenter, viewer: false unless @presenter.iiif_viewer? %>
+        <%= render 'representative_media', presenter: @presenter, viewer: @presenter.iiif_viewer? %>
       </div>
       <div class="col-sm-5">
         <%= render 'short_metadata', presenter: @presenter %>
