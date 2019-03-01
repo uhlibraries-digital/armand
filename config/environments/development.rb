@@ -27,6 +27,8 @@ Rails.application.configure do
   end
 
   config.active_job.queue_adapter     = Settings.active_job.queue_adapter
+
+  config.public_file_server.enabled = true
   
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
