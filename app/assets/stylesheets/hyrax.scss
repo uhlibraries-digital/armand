@@ -197,3 +197,19 @@ body {
     }
   }
 }
+
+.object-viewer {
+  div {
+    text-align: center;
+    font-size: 1.25rem;
+
+    img {
+      max-width: 300px;
+      margin: auto;
+    }
+  }
+}
+
+.no-preview {
+  color: $slate;
+}
