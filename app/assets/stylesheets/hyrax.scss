@@ -39,8 +39,6 @@ body {
 }
 
 .alert-message {
-  margin: -20px 0 20px 0;
-
   .alert {
     margin: 0;
     border-radius: 0;
@@ -50,20 +48,25 @@ body {
 .metadata-table {
   width: 100%;
 
-  td, th {
+  td,
+  th {
     padding: 1rem 0;
     vertical-align: top;
     border-bottom: 1px solid $border;
   }
+
   th {
     width: 20%;
   }
+
   td {
     width: 80%;
   }
+
   th:after {
     content: ":"
   }
+
   ul.tabular {
     margin: 0;
     padding: 0;
@@ -94,11 +97,6 @@ body {
     }
   }
 
-  &.row {
-    margin-left: 0;
-    margin-right: 0;
-  }
-
   .work-date {
     span {
       font-weight: bolder;
@@ -115,6 +113,7 @@ body {
     .metadata-table {
       li {
         float: left;
+
         &:not(:last-child):after {
           content: "; ";
           margin-right: 5px;
@@ -172,7 +171,8 @@ body {
           padding: 10px 0;
           font-size: 1rem;
 
-          th, td {
+          th,
+          td {
             padding-bottom: 20px;
           }
 
@@ -212,4 +212,12 @@ body {
 
 .no-preview {
   color: $slate;
+}
+
+.p-l {
+  padding-left: 1em;
+}
+
+.p-r {
+  padding-right: 1em;
 }
