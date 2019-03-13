@@ -73,6 +73,7 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
+gem 'devise_cas_authenticatable'
 gem 'edtf-humanize'
 gem 'riiif', '~> 2.0'
 gem 'config'

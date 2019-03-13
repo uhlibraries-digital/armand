@@ -16,7 +16,11 @@ Rails.application.routes.draw do
     concerns :searchable
   end
 
-  devise_for :users
+  if Settings.cas.active
+    devise_for :users, :controllers => { sessions: 'devise/cas_sessions' }
+  else
+    devise_for :users
+  end
 
   mount Qa::Engine => '/authorities'
   mount Hyrax::Engine, at: '/'

@@ -15,3 +15,10 @@ greens:
 
 active_job:
   queue_adapter: :sidekiq
+
+cas:
+  active: false
+  base_url: https://cas.example.com
+  validate_url: https://cas.example.com/p3/serviceValidate
+  create_user: true
+  email_attribute: :email
