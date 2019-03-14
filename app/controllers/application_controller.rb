@@ -15,6 +15,12 @@ class ApplicationController < ActionController::Base
 
   before_action :require_active_account!
 
+  def current_ability
+    session_opts ||= user_session
+    session_opts ||= {}
+    @current_ability ||= Ability.new(current_user, session_opts.merge(remote_ip: request.remote_ip))
+  end
+
   private
 
     def require_active_account!
