@@ -60,6 +60,10 @@ en:
       social_media:
         pinterest: Pinterest
         linkedin: LinkedIn
+    visibility:
+      ip:
+        note_html: Restrict access to IP address or IP range
+        text: IP Address
   simple_form:
     hints:
       defaults:

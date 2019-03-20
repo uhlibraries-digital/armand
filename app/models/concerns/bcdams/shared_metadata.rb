@@ -63,6 +63,10 @@ module Bcdams
         index.as :stored_searchable 
       end
 
+      property :ip_address, predicate: ::RDF::URI.new("https://www.w3.org/ns/auth/acl#Authorization") do |index|
+        index.as :stored_searchable
+      end
+
     end
   end
 end

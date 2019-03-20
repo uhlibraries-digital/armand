@@ -22,6 +22,19 @@
     </li>
     <li class="radio">
       <label>
+        <%= f.radio_button :visibility, Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_IP, data: { 'target': '#collapseIp' }  %>
+        <%= visibility_badge(Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_IP) %>
+        <br />
+        <%= t('hyrax.visibility.ip.note_html') %>
+        <div class="collapse" id="collapseIp">
+              <div class="form-inline">
+                <%= f.input :ip_address, as: :multi_value, wrapper: :inline, value: f.object.ip_address, include_blank: false, label: 'IP Address' %>
+              </div>
+            </div>
+      </label>
+    </li>
+    <li class="radio">
+      <label>
         <%= f.radio_button :visibility, Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PRIVATE %>
         <%= visibility_badge(Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PRIVATE) %>
         <br />

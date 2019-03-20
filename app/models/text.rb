@@ -3,6 +3,7 @@
 class Text < ActiveFedora::Base
   include ::Hyrax::WorkBehavior
   include Bcdams::SharedMetadata
+  include Armand::AccessControl
 
   self.indexer = TextIndexer
   # Change this to restrict which works can be added as a child.
