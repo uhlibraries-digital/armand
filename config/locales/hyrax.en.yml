@@ -64,6 +64,17 @@ en:
       ip:
         note_html: Restrict access to IP address or IP range
         text: IP Address
+    admin:
+      admin_sets:
+        form:
+          tabs:
+            visibility: Visibility
+        form_visibility:
+          page_description: Visibility settings determine the options available to depositors when submitting a work to this administrative set. Changes to these settings do not affect previously deposited works.
+          visibility:
+            description: Set visibility policies for the administrative set.
+            restricted: Private -- depositor can only select private for visibility. Access is restricted to repository administrators, managers, and viewers of the set.
+            varies: All settings allowed -- depositor can choose.
   simple_form:
     hints:
       defaults:
