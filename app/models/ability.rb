@@ -18,7 +18,7 @@ class Ability
   def custom_permissions
     
     if !Settings.campus_ip.nil?
-      ips = Settings.campus_ip.split(',').map(&:strip).collect do |ip|
+      ips = Settings.campus_ip.map(&:strip).collect do |ip|
         addr = IPAddr.new(ip) rescue next
         addr.to_range.map(&:to_s)
       end

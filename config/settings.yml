@@ -22,3 +22,6 @@ cas:
   validate_url: https://cas.example.com/p3/serviceValidate
   create_user: true
   email_attribute: :email
+
+campus_ip: 
+  - 192.168.1.0/24
