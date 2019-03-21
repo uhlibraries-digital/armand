@@ -14,11 +14,18 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   before_action :require_active_account!
+  before_action :discard_flash_if_authenticated, only: [:show]
 
   def current_ability
     session_opts ||= user_session
     session_opts ||= {}
     @current_ability ||= Ability.new(current_user, session_opts.merge(remote_ip: request.remote_ip))
+  end
+
+  def discard_flash_if_authenticated
+    if Settings.cas.active && flash[:alert] == "You are not authorized to access this page."
+      flash.delete(:alert)
+    end
   end
 
   private
