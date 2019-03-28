@@ -37,4 +37,13 @@ class User < ApplicationRecord
       end
     end
   end
+
+  def self.find_or_create_system_user(user_key)
+    if Settings.cas.active
+      User.find_by_user_key(user_key) || User.create!(Hydra.config.user_key_field => user_key)
+    else
+      User.find_by_user_key(user_key) || User.create!(Hydra.config.user_key_field => user_key, password: Devise.friendly_token[0, 20])
+    end
+  end
+
 end
