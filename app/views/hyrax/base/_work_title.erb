@@ -1,4 +1,16 @@
-<div class="work-title-wrapper">
-  <h1><%= presenter.title.first %></h1>
-  <div class="work-date"><span>Date: </span><%= presenter.humanize_date.join('; ') %></div>
+<div class="work-title-wrapper row">
+  <div class="title col-md-9">
+    <h2><%= presenter.title.first %></h1>
+    <% humanize_date = presenter.humanize_date.join('; ') %>
+    <% if !humanize_date.empty? %>
+      <div class="work-date"><span>Date: </span><%= presenter.humanize_date.join('; ') %></div>
+    <% end %>
+  </div>
+  <div class="collection col-md-3">
+    <ul class="member_of_collections">
+        <% presenter.member_of_collection_presenters.each do |p| %>
+          <li><%= link_to p.to_s, collection_path(p.id), class: 'collection-link' %></li>
+        <% end %>
+      </ul>
+  </div>
 </div>

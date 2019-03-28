@@ -89,12 +89,34 @@ body {
     margin-right: -15px;
     margin-bottom: 3.375rem;
 
-    h1 {
+    h2 {
       margin: 0;
       padding: 0;
       color: $slate-dark;
       font-size: 1.75rem;
     }
+
+    .collection {
+      font-size: 1.25rem;
+      text-align: right;
+
+      .member_of_collections {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+
+        li {
+          float: right;
+
+          &:not(:last-child):after {
+            content: "; ";
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+
   }
 
   .work-date {
@@ -220,4 +242,22 @@ body {
 
 .p-r {
   padding-right: 1em;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .work-type {
+    .work-title-wrapper {
+      .collection {
+        text-align: left;
+
+        .member_of_collections {
+          li {
+            float: left;
+          }
+        }
+      }
+    }
+  }
+
 }
