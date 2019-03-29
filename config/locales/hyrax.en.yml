@@ -75,6 +75,9 @@ en:
             description: Set visibility policies for the administrative set.
             restricted: Private -- depositor can only select private for visibility. Access is restricted to repository administrators, managers, and viewers of the set.
             varies: All settings allowed -- depositor can choose.
+    collections:
+      search_form:
+        placeholder: Search within this collection
   simple_form:
     hints:
       defaults:
