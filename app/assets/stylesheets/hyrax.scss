@@ -245,6 +245,16 @@ body {
   padding-right: 1em;
 }
 
+.hyc-bl-sort {
+  overflow: hidden;
+}
+
+.hyc-bl-results {
+  .date {
+    width: 20%;
+  }
+}
+
 /* RESPONSIVE */
 @media (max-width: 992px) {
   .work-type {

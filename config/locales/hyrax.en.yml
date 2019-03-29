@@ -78,6 +78,10 @@ en:
     collections:
       search_form:
         placeholder: Search within this collection
+    dashboard:
+      my:
+        heading:
+          date: Date
   simple_form:
     hints:
       defaults:

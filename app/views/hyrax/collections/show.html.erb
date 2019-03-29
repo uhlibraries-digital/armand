@@ -98,10 +98,6 @@
 
   <!-- Works -->
   <% if @members_count > 0 %>
-      <div class="hyc-blacklight hyc-bl-title">
-        <h4><%= t('.works_in_collection') %> (<%= @members_count %>)</h4>
-      </div>
-
       <div class="hyc-blacklight hyc-bl-sort">
         <%= render 'sort_and_per_page', collection: @presenter %>
       </div>
