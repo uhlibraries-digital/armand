@@ -105,9 +105,10 @@ body {
         margin: 0;
         padding: 0;
         overflow: hidden;
+        float: right;
 
         li {
-          float: right;
+          float: left;
 
           &:not(:last-child):after {
             content: "; ";
@@ -252,9 +253,7 @@ body {
         text-align: left;
 
         .member_of_collections {
-          li {
-            float: left;
-          }
+          float: left;
         }
       }
     }
