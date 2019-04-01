@@ -68,7 +68,7 @@ module Bcdams
       end
 
       property :provenance, predicate: ::RDF::URI.new("https://vocab.lib.uh.edu/bcdams-map#isPartOf") do |index|
-        index.as :stored_searchable
+        index.as :stored_searchable, :facetable
       end
 
     end
