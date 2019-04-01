@@ -7,7 +7,7 @@ module Bcdams
       delegate :alternative, :date, :extent, :format, :genre,
                :place, :series_title, :time_period, :resource_access_rights,
                :aspaceurl, :donor, :note, :related_item, :preservation_location, 
-               :digital_object_ark, :rights_holder,
+               :digital_object_ark, :rights_holder, :provenance,
                to: :solr_document
     
       def permalink

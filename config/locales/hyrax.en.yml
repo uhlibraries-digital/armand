@@ -110,6 +110,7 @@ en:
         related_item: A related resource.
         digital_object_ark: The URL to the digital object on the provider’s web site in its full information context.
         rights_holder: A person or organization owning or managing rights over the resource.
+        provenance: A related resource in which the described resource is physically or logically included. 
     labels:
       defaults:
         alternative: Alternative Title

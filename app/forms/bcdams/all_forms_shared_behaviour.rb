@@ -4,24 +4,26 @@ module Bcdams
     
     included do
       self.terms += [
-        :resource_type,
         :alternative,
-        :date,
-        :extent,
-        :format,
-        :genre,
-        :place,
         :series_title,
-        :time_period,
-        :resource_access_rights,
+        :creator,
+        :date,
+        :format,
+        :resource_type,
+        :extent,
+        :provenance,
         :aspaceurl,
-        :digital_object_ark,
         :donor,
+        :rights_holder,
+        :resource_access_rights,
         :note,
         :related_item,
+        :digital_object_ark,
+        :genre,
+        :place,
+        :time_period,
         :preservation_location,
-        :rights_holder,
-        :ip_address
+        :ip_address,
       ]
       self.required_fields += [:resource_access_rights]
 
