@@ -6,7 +6,6 @@ module Bcdams
       self.terms += [
         :alternative,
         :series_title,
-        :creator,
         :date,
         :format,
         :resource_type,
