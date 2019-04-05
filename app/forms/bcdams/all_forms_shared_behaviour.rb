@@ -27,7 +27,7 @@ module Bcdams
       self.required_fields += [:resource_access_rights]
 
       # Remove terms
-      self.terms -= [:keyword, :source, :based_near, :license, :date_created, :related_url]
+      self.terms -= [:keyword, :source, :based_near, :license, :date_created, :related_url, :rights_notes]
       self.required_fields -= [:keyword, :creator]
 
       self.field_metadata_service = BcdamsMetadataService
