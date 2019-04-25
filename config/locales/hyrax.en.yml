@@ -4,6 +4,7 @@ en:
     search:
       fields:
         facet:
+          resource_type_sim: Type
           based_near_label_sim: Location
           creator_sim: Creator
           file_format_sim: Format
@@ -13,6 +14,7 @@ en:
           publisher_sim: Publisher
           subject_sim: Subject
         index:
+          resource_type_tesim: Type
           based_near_tesim: Location
           contributor_tesim: Contributor
           creator_tesim: Creator
@@ -26,9 +28,10 @@ en:
           language_tesim: Language
           license_tesim: License
           publisher_tesim: Publisher
-          rights_statement_tesim: Rights Statement
+          rights_statement_tesim: Rights
           subject_tesim: Subject
         show:
+          resource_type_tesim: Type
           based_near_tesim: Location
           contributor_tesim: Contributor
           creator_tesim: Creator
@@ -42,7 +45,7 @@ en:
           language_tesim: Language
           license_tesim: License
           publisher_tesim: Publisher
-          rights_statement_tesim: Rights Statement
+          rights_statement_tesim: Rights
           subject_tesim: Subject
           title_tesim: Title
   hyrax:
