@@ -1,0 +1,12 @@
+<div class="search-results-title-row row">
+  <div class="col-sm-6 search-result-title-col">
+    <h4 class="search-result-title"><%= link_to document.title_or_label, document %></h4>
+  </div>
+  <div class="col-sm-6 search-result-date-col">
+    <% doc_presenter = index_presenter(document) %>
+    <% date_field = index_fields(document)['date_tesim'] rescue null %>
+    <% if !date_field.null? %>
+      <span class="search-result-date"><%= doc_presenter.field_value date_field %></span>
+    <% end %>
+  </div>
+</div>

@@ -255,6 +255,57 @@ body {
   }
 }
 
+.fa {
+  &.collection-icon-search {
+    font-size: 7em;
+  }
+}
+
+.gallery {
+
+  .document {
+    border: none;
+    border-bottom: none !important;
+
+    .thumbnail {
+      border: none;
+
+      .search-results-title-row {
+        h4 {
+          font-size: 14px;
+          line-height: 20px;
+          margin: 0;
+          padding: 0;
+          text-align: left;
+        }
+
+        &.collection {
+          h4 {
+            text-align: center;
+          }
+        }
+
+        .search-result-title-col {
+          padding: 0;
+          padding-left: 15px;
+        }
+
+        .search-result-date-col {
+          padding: 0;
+          padding-right: 15px;
+          border-left: 1px solid #ddd;
+        }
+
+        .search-result-date {
+          text-align: right;
+          display: inline-block;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
 /* RESPONSIVE */
 @media (max-width: 992px) {
   .work-type {
