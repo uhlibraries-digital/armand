@@ -295,6 +295,8 @@ class CatalogController < ApplicationController
     # label is key, solr field is value
     config.add_sort_field "score desc, #{uploaded_field} desc", label: "relevance"
     config.add_sort_field "sort_title_ssi asc, #{uploaded_field} desc", label: "title"
+    config.add_sort_field "sort_date_ssi asc", label: "date \u25B2"
+    config.add_sort_field "sort_date_ssi desc", label: "date \u25BC"
     config.add_sort_field "#{uploaded_field} desc", label: "recently added"
     # config.add_sort_field "#{uploaded_field} desc", label: "date uploaded \u25BC"
     # config.add_sort_field "#{uploaded_field} asc", label: "date uploaded \u25B2"
