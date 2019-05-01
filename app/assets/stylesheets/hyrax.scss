@@ -306,6 +306,12 @@ body {
   }
 }
 
+.search-result-wrapper .search-results-title-row .search-result-title {
+  display: inline-block;
+  margin: 0;
+  margin-right: 15px;
+}
+
 /* RESPONSIVE */
 @media (max-width: 992px) {
   .work-type {
@@ -320,4 +326,15 @@ body {
     }
   }
 
+}
+
+@media (min-width: 768px) {
+  .dl-horizontal dt {
+    width: auto;
+    padding-right: 10px;
+  }
+
+  .dl-horizontal dd {
+    margin-left: 0;
+  }
 }
