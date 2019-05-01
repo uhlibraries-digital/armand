@@ -25,7 +25,7 @@ class ArmandIndexer < Hyrax::WorkIndexer
       solr_doc['sort_title_ssi'] = object.to_s.downcase
 
       # Add single EDTF date value for sorting
-      solr_doc['sort_date_ssi'] = object.date.join('; ')
+      solr_doc['sort_date_ssi'] = object.date.join('; ').gsub(/[\[\]~]/, '')
 
       admin_set_label = object.admin_set.to_s
       solr_doc['admin_set_sim']   = admin_set_label
