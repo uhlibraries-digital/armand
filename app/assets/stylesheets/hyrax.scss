@@ -266,9 +266,15 @@ body {
   .document {
     border: none;
     border-bottom: none !important;
+    max-width: 250px;
 
     .thumbnail {
       border: none;
+
+      &>img,
+      & a>img {
+        min-width: 100%;
+      }
 
       .search-results-title-row {
         h4 {
