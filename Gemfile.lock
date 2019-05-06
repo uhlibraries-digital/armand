@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/uhlibraries-digital/hybridge.git
-  revision: 1ea59eaa21a09a2cc43e74c1f64ac1f358713e16
+  revision: efb2459b80b47e20b802b369f49a38cd4532073c
   specs:
     hybridge (1.0.0.pre.beta.1)
       config
@@ -543,7 +543,7 @@ GEM
     noid-rails (3.0.1)
       actionpack (>= 5.0.0, < 6)
       noid (~> 0.9)
-    nokogiri (1.10.2)
+    nokogiri (1.10.3)
       mini_portile2 (~> 2.4.0)
     nokogumbo (1.5.0)
       nokogiri
@@ -571,7 +571,7 @@ GEM
       nokogiri (~> 1.6)
       rails (~> 5.0)
       rdf
-    rack (2.0.6)
+    rack (2.0.7)
     rack-protection (2.0.5)
       rack
     rack-test (1.1.0)
