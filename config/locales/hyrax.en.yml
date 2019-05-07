@@ -49,6 +49,8 @@ en:
           subject_tesim: Subject
           title_tesim: Title
   hyrax:
+    controls:
+      help:  Using Digital Collections
     account_name: University of Houston Libaries
     directory:
       suffix: "@uh.edu"
