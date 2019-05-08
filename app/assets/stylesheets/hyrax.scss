@@ -45,6 +45,12 @@ body {
   }
 }
 
+.navbar-static-top {
+  &.work {
+    margin-bottom: 0;
+  }
+}
+
 .metadata-table {
   width: 100%;
 
@@ -75,7 +81,7 @@ body {
 }
 
 .work-type {
-  margin-top: -20px;
+  margin-top: 0;
   margin-bottom: 3.375rem;
 
   .work-type-body {

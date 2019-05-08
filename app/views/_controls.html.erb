@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-static-top" role="navigation">
+<nav class="navbar navbar-default navbar-static-top <%= 'work' if Hyrax.config.registered_curation_concern_types.include? controller_name.singularize.capitalize %>" role="navigation">
   <div class="container-fluid">
     <div class="row">
       <ul class="nav navbar-nav col-sm-5">
