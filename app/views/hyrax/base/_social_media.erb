@@ -7,7 +7,7 @@
       Permalink
     </label>
     <div class="input-group">
-      <%= text_field('permalink-text', nil, :value => share_url, id: "permalink-text", class: "form-control") %> 
+      <%= text_field_tag('permalink-text', share_url, id: "permalink-text", class: "form-control") %> 
       <div class="input-group-btn">
         <button id="permalink-copy-btn" type="button" class="btn btn-primary">
           Copy
