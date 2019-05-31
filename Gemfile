@@ -75,7 +75,7 @@ end
 
 gem 'devise_cas_authenticatable'
 gem 'edtf-humanize'
-gem 'riiif', '~> 2.0'
+# gem 'riiif', '~> 2.0'
 gem 'config'
 gem 'hybridge', git: 'https://github.com/uhlibraries-digital/hybridge.git'
 gem 'sidekiq'

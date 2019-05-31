@@ -7,7 +7,7 @@ Rails.application.routes.draw do
     mount Sidekiq::Web => '/sidekiq'
   end
   
-  mount Riiif::Engine => 'images', as: :riiif
+  # mount Riiif::Engine => 'images', as: :riiif
   mount Blacklight::Engine => '/'
   
   concern :searchable, Blacklight::Routes::Searchable.new

@@ -142,7 +142,9 @@ Hyrax.config do |config|
 
   # Returns a URL that resolves to an image provided by a IIIF image server
   config.iiif_image_url_builder = lambda do |file_id, base_url, size|
-    Riiif::Engine.routes.url_helpers.image_url(file_id, host: base_url, size: size)
+    # Riiif::Engine.routes.url_helpers.image_url(file_id, host: base_url, size: size)
+    file_id_encode = file_id.gsub(%r{\/}, '%2F')
+    "#{Settings.iiif.endpoint_url}/#{file_id_encode}/full/#{size}/0/default.jpg"
   end
   # config.iiif_image_url_builder = lambda do |file_id, base_url, size|
   #   "#{base_url}/downloads/#{file_id.split('/').first}"
@@ -150,8 +152,10 @@ Hyrax.config do |config|
 
   # Returns a URL that resolves to an info.json file provided by a IIIF image server
   config.iiif_info_url_builder = lambda do |file_id, base_url|
-    uri = Riiif::Engine.routes.url_helpers.info_url(file_id, host: base_url)
-    uri.sub(%r{/info\.json\Z}, '')
+    # uri = Riiif::Engine.routes.url_helpers.info_url(file_id, host: base_url)
+    # uri.sub(%r{/info\.json\Z}, '')
+    file_id_encode = file_id.gsub(%r{\/}, '%2F')
+    "#{Settings.iiif.endpoint_url}/#{file_id_encode}"
   end
   # config.iiif_info_url_builder = lambda do |_, _|
   #   ""
