@@ -17,15 +17,15 @@
   </div>
 
   <!-- Sharingbutton Facebook -->
-  <%= link_to "https://facebook.com/sharer/sharer.php?#{{u: share_url}.to_param}", class: 'fa fa-facebook share-link', target: '_blank', rel: 'noopener noreferrer', title: t('hyrax.base.social_media.facebook') do %>
+  <%= link_to "https://facebook.com/sharer/sharer.php?#{{u: share_url}.to_param}", class: 'fa fa-facebook share-link', target: '_blank', rel: 'noopener noreferrer', alt: t('hyrax.base.social_media.facebook'), title: t('hyrax.base.social_media.facebook') do %>
   <% end %>
 
   <!-- Sharingbutton Twitter -->
-  <%= link_to "https://twitter.com/intent/tweet/?#{{text: page_title, url: share_url}.to_param}", class: 'fa fa-twitter share-link', target: '_blank', rel: 'noopener noreferrer', title: t('hyrax.base.social_media.twitter') do %>
+  <%= link_to "https://twitter.com/intent/tweet/?#{{text: page_title, url: share_url}.to_param}", class: 'fa fa-twitter share-link', target: '_blank', rel: 'noopener noreferrer', alt: t('hyrax.base.social_media.twitter'), title: t('hyrax.base.social_media.twitter') do %>
   <% end %>
 
   <!-- Sharingbutton Pinterest -->
-  <%= link_to "http://pinterest.com/pin/create/button/?#{{description: page_title, url: share_url}.to_param}", class: 'fa fa-pinterest share-link', target: '_blank', rel: 'noopener noreferrer', title: t('hyrax.base.social_media.pinterest') do %>
+  <%= link_to "http://pinterest.com/pin/create/button/?#{{description: page_title, url: share_url}.to_param}", class: 'fa fa-pinterest share-link', target: '_blank', rel: 'noopener noreferrer', alt: t('hyrax.base.social_media.pinterest'), title: t('hyrax.base.social_media.pinterest') do %>
   <% end %>
 
 </div>
