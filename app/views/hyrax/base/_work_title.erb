@@ -1,6 +1,6 @@
 <div class="work-title-wrapper row">
   <div class="title col-md-9">
-    <h2><%= presenter.title.first %></h1>
+    <h2><%= presenter.title.first %></h2>
     <% humanize_date = presenter.humanize_date.join('; ') %>
     <% if !humanize_date.empty? %>
       <div class="work-date"><span>Date: </span><%= presenter.humanize_date.join('; ') %></div>
