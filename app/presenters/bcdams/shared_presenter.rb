@@ -23,6 +23,10 @@ module Bcdams
           date
         end
       end
+
+      def iiif_viewer
+        :armand_viewer
+      end
     
     end
   end
