@@ -41,6 +41,14 @@
         app.setAttribute("style", "height:" + height + "px");
     </script>
 
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(document).on('seadragonExtension.onCurrentViewUri', (e, uri) => {
+                window.parent.$(window.parent.document).trigger('armand.onCurrentViewUri', uri);
+            })
+        });
+    </script>
+
     <!-- uncomment the following for GA tracking when embedded on third party sites -->
     <!--<script type="text/javascript" src="/examples/events.js"></script>-->
 

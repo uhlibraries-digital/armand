@@ -2,3 +2,15 @@
 <div class="viewer-wrapper">
   <div class="uv viewer" data-uri="<%= main_app.polymorphic_url [main_app, :manifest, presenter], { locale: nil } %>"></div>
 </div>
+<script type="text/javascript">
+  $(document).on('armand.onCurrentViewUri', (e, uri) => {
+    var file_id = '';
+    var match = uri.fullUri.match(/<%= Settings.iiif.endpoint_url.gsub('/', '\/') %>\/?([^\/]+)/i);
+    if (match) {
+      file_id = match[1];
+      console.log('file_id', file_id);
+
+      //TODO: Handle support for download buttons
+    }
+  });
+</script>
