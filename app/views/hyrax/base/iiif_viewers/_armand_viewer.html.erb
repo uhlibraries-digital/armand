@@ -7,18 +7,19 @@
     <span class="title">Download Options</span>
     <div class="download-list">
       <div class="download-btn">
-        <a href="#" id="download-link-small" class="small-btn">400px</a>
+        <a href="#" id="download-link-small" class="small-btn" title="Download 400px image">400px</a>
       </div>
       <div class="download-btn">
-        <a href="#" id="download-link-medium" class="medium-btn">800px</a>
+        <a href="#" id="download-link-medium" class="medium-btn" title="Download 800px image">800px</a>
       </div>
       <div class="download-btn">
-        <a href="#" id="download-link-large" class="large-btn">1200px</a>
+        <a href="#" id="download-link-large" class="large-btn" title="Download 1200px image">1200px</a>
       </div>
     </div>
   </div>
 </div>
 <script type="text/javascript">
+  var isFullScreen = false;
   $(document).on('armand.onCurrentViewUri', (e, uri) => {
     var match = uri.fullUri.match(/<%= Settings.iiif.endpoint_url.gsub('/', '\/') %>\/?([^\/]+)/i);
     if (match) {
@@ -33,6 +34,15 @@
       $("#download-link-large").attr("href", `${base_url}/${file_id}${large_path}?response-content-disposition=attachment%3B%20filename%3Dimage.jpg`);
 
       //TODO: Handle support for download buttons
+    }
+  });
+  $(document).on('fullscreenchange webkitfullscreenchange mozfullscreenchange MSFullscreenChange', function (e) {
+    if (isFullScreen) {
+      $('.uv.viewer iframe')[0].contentWindow.$.publish('armand.onExitFullScreen', isFullScreen);
+      isFullScreen = false;
+    }
+    else {
+      isFullScreen = true;
     }
   });
 </script>

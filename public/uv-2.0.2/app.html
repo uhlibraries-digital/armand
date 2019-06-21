@@ -52,8 +52,21 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
+            var isFullScreen = false;
+
             $(document).on('seadragonExtension.onCurrentViewUri', (e, uri) => {
                 window.parent.$(window.parent.document).trigger('armand.onCurrentViewUri', uri);
+            });
+
+            $.subscribe('armand.onExitFullScreen', (e, armandIsFullScreen) => {
+                // Fixes an issue were using the Esc key doesn't exit full screen completely
+                if (armandIsFullScreen && isFullScreen) {
+                    $.publish('uv.onToggleFullScreen');
+                }
+            });
+
+            $.subscribe('uv.onToggleFullScreen', (e) => {
+                isFullScreen = !isFullScreen;
             })
         });
     </script>
