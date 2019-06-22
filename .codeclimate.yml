@@ -1,0 +1,3 @@
+version: "2"
+exclude_patterns:
+- "public/uv-2.0.2"
