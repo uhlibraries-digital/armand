@@ -522,6 +522,39 @@ form.new_user input[type='submit']:hover {
   border-color: $brick;
 }
 
+/* TABLES */
+table.striped {
+  border-collapse: collapse;
+  line-height: 1.125rem;
+  margin: 0 0 10px;
+  width: 100%;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+
+  th {
+    background-color: $red;
+    background-repeat: repeat-x;
+    vertical-align: middle;
+    color: $white;
+    font-weight: normal;
+    text-decoration: none;
+    padding-left: 8px;
+    border-right: 1px #ddd solid;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
+    height: 32px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #F3f3f3;
+  }
+
+  td {
+    padding: 10px;
+  }
+
+}
+
 /* RESPONSIVE */
 @media (max-width: 992px) {
   .uhlib-links>ul {
