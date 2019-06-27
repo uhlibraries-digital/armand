@@ -14,6 +14,21 @@
     font-weight: 700;
   }
 
+  .download-manifest {
+    float: right;
+    height: 60px;
+
+    .download-link-manifest {
+      line-height: 60px;
+      vertical-align: bottom;
+
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+
   .download-btn {
     float: left;
     padding: 5px;

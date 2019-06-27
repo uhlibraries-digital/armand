@@ -16,8 +16,11 @@
         <a href="#" id="download-link-large" class="large-btn" title="Download large image">1200px</a>
       </div>
       <div class="download-btn">
-        <a href="#" id="download-link-org" class="org-btn" title="Download original image">Original</a>
+        <a href="#" id="download-link-org" class="org-btn" title="Download original image" target="_blank">Original</a>
       </div>
+    </div>
+    <div class="download-manifest">
+      <%= link_to (image_tag 'iiif_logo.png', alt: "IIIF"), (main_app.polymorphic_url [main_app, :manifest, presenter], { locale: nil }), class: 'download-link-manifest', target: '_blank', title: 'Get manifest' %>
     </div>
   </div>
 </div>
