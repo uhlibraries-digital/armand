@@ -7,13 +7,16 @@
     <span class="title">Download Options</span>
     <div class="download-list">
       <div class="download-btn">
-        <a href="#" id="download-link-small" class="small-btn" title="Download 400px image">400px</a>
+        <a href="#" id="download-link-small" class="small-btn" title="Download small image">400px</a>
       </div>
       <div class="download-btn">
-        <a href="#" id="download-link-medium" class="medium-btn" title="Download 800px image">800px</a>
+        <a href="#" id="download-link-medium" class="medium-btn" title="Download medium image">800px</a>
       </div>
       <div class="download-btn">
-        <a href="#" id="download-link-large" class="large-btn" title="Download 1200px image">1200px</a>
+        <a href="#" id="download-link-large" class="large-btn" title="Download large image">1200px</a>
+      </div>
+      <div class="download-btn">
+        <a href="#" id="download-link-org" class="org-btn" title="Download original image">Original</a>
       </div>
     </div>
   </div>
@@ -24,16 +27,16 @@
     var match = uri.fullUri.match(/<%= Settings.iiif.endpoint_url.gsub('/', '\/') %>\/?([^\/]+)/i);
     if (match) {
       var file_id = match[1];
+      var document_id = file_id.split('%2F', 3)[0];
       var base_url = "<%= Settings.iiif.endpoint_url %>";
-      var small_path = "/full/!400,400/0/default.jpg"
-      var medium_path = "/full/!800,800/0/default.jpg"
-      var large_path = "/full/!1200,1200/0/default.jpg"
+      var small_path = "/full/!400,400/0/default.jpg";
+      var medium_path = "/full/!800,800/0/default.jpg";
+      var large_path = "/full/!1200,1200/0/default.jpg";
 
       $("#download-link-small").attr("href", `${base_url}/${file_id}${small_path}?response-content-disposition=attachment%3B%20filename%3Dimage.jpg`);
       $("#download-link-medium").attr("href", `${base_url}/${file_id}${medium_path}?response-content-disposition=attachment%3B%20filename%3Dimage.jpg`);
       $("#download-link-large").attr("href", `${base_url}/${file_id}${large_path}?response-content-disposition=attachment%3B%20filename%3Dimage.jpg`);
-
-      //TODO: Handle support for download buttons
+      $("#download-link-org").attr("href", `${window.location.protocol}//<%= Settings.armand.host %>/downloads/${document_id}`);
     }
   });
   $(document).on('fullscreenchange webkitfullscreenchange mozfullscreenchange MSFullscreenChange', function (e) {
