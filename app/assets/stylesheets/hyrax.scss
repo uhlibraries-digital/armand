@@ -162,6 +162,19 @@ body {
     }
   }
 
+  .feedback-form {
+
+    color: #fff;
+    background-color: #d9534f;
+    border-color: #d9534f;
+    text-align: center;
+    margin-left: 100px ;
+  
+    .feedback-form:hover {
+      background-color: #d2322d;
+    }
+  }
+
   .social-media {
     background-color: hsl(0, 0%, 95%);
 
