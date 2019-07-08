@@ -27,6 +27,7 @@ class SolrDocument
   use_extension( Hydra::ContentNegotiation )
 
   attribute :ip_address, Solr::Array, solr_name('ip_address')
+  attribute :download_option, Solr::Array, solr_name('download_option')
 
   attribute :alternative, Solr::Array, solr_name('alternative')
   attribute :date, Solr::Array, solr_name('date')

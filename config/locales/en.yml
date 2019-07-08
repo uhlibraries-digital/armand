@@ -31,3 +31,13 @@
 
 en:
   no_access: You do not have sufficient privileges
+  download:
+    all:
+      text: 'All'
+      note_html: 'All download options are available. Images: Small, Medium, Large and Original'
+    low:
+      text: 'Low'
+      note_html: 'Only the low resolution download is available. Images: Small'
+    none:
+      text: 'None'
+      note_html: 'No downloading options are available'

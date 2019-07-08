@@ -67,6 +67,10 @@ module Bcdams
         index.as :stored_searchable
       end
 
+      property :download_option, predicate: ::RDF::URI.new("https://www.w3.org/ns/auth/acl#accessControl"), multiple: false do |index|
+        index.as :stored_searchable
+      end
+
       property :provenance, predicate: ::RDF::URI.new("https://vocab.lib.uh.edu/bcdams-map#isPartOf") do |index|
         index.as :stored_searchable, :facetable
       end

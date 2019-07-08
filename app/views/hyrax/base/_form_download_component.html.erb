@@ -1,0 +1,30 @@
+<fieldset>
+  <legend class="legend-save-work">Download</legend>
+  Download: <%= "#{f.object.download_option}" %>
+  <ul class="download">
+    <li class="radio">
+      <label>
+        <%= f.radio_button :download_option, Armand::DownloadControl::DOWNLOAD_TEXT_VALUE_ALL %>
+        <%= download_badge(Armand::DownloadControl::DOWNLOAD_TEXT_VALUE_ALL) %>
+        <br />
+        <%= t('download.all.note_html') %>
+      </label>
+    </li>
+    <li class="radio">
+      <label>
+        <%= f.radio_button :download_option, Armand::DownloadControl::DOWNLOAD_TEXT_VALUE_LOW %>
+        <%= download_badge(Armand::DownloadControl::DOWNLOAD_TEXT_VALUE_LOW) %>
+        <br />
+        <%= t('download.low.note_html') %>
+      </label>
+    </li>
+    <li class="radio">
+      <label>
+        <%= f.radio_button :download_option, Armand::DownloadControl::DOWNLOAD_TEXT_VALUE_NONE %>
+        <%= download_badge(Armand::DownloadControl::DOWNLOAD_TEXT_VALUE_NONE) %>
+        <br />
+        <%= t('download.none.note_html') %>
+      </label>
+    </li>
+  </ul>
+</fieldset>

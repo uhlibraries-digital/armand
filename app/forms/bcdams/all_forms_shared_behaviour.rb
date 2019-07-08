@@ -23,6 +23,7 @@ module Bcdams
         :time_period,
         :preservation_location,
         :ip_address,
+        :download_option
       ]
       self.required_fields += [:resource_access_rights]
 
@@ -53,7 +54,7 @@ module Bcdams
            :visibility_after_embargo, :visibility_during_lease,
            :lease_expiration_date, :visibility_after_lease, :visibility,
            :thumbnail_id, :representative_id, :rendering_ids, :ordered_member_ids,
-           :member_of_collection_ids, :in_works_ids, :admin_set_id, :ip_address]
+           :member_of_collection_ids, :in_works_ids, :admin_set_id, :ip_address, :download_option]
       end
 
     end
