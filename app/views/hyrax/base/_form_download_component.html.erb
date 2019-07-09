@@ -3,7 +3,7 @@
   <ul class="download">
     <li class="radio">
       <label>
-        <%= f.radio_button :download_option, Armand::DownloadControl::DOWNLOAD_TEXT_VALUE_ALL %>
+        <%= f.radio_button :download_option, Armand::DownloadControl::DOWNLOAD_TEXT_VALUE_ALL, :checked => (f.object.download_option.first.blank?) %>
         <%= download_badge(Armand::DownloadControl::DOWNLOAD_TEXT_VALUE_ALL) %>
         <br />
         <%= t('download.all.note_html') %>
