@@ -168,8 +168,8 @@ body {
     background-color: #d9534f;
     border-color: #d9534f;
     text-align: center;
-    margin-left: 100px ;
-  
+    margin-left: 100px;
+
     .feedback-form:hover {
       background-color: #d2322d;
     }
@@ -427,6 +427,13 @@ body {
 ul.download {
   list-style-type: none;
   padding-left: 8px;
+}
+
+span.download-unavailable {
+  float: left;
+  height: 60px;
+  vertical-align: middle;
+  line-height: 60px;
 }
 
 /* RESPONSIVE */
