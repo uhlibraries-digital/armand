@@ -27,7 +27,7 @@
       </div>
     <% else %>
       <div class="download-message">
-        <span class="download-unavailable">Download options are unavailable</span>
+        <span class="download-unavailable">Download options are unavailable. <%= link_to t('download.more_text'), hyrax.help_path(anchor: 'download') %></span>
       </div>
     <% end %>
   </div>
