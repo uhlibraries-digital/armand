@@ -6,7 +6,7 @@ module Hyrax
       self.terms = [:creator, :contributor, :description,
                     :keyword, :resource_type, :license, :publisher, :date_created,
                     :subject, :language, :identifier, :based_near,
-                    :related_url, :ip_address]
+                    :related_url, :ip_address, :download_option]
       self.required_fields = []
       self.model_class = Hyrax.primary_work_type
 
@@ -53,6 +53,7 @@ module Hyrax
          :visibility_after_lease,
          :visibility,
          { ip_address: [] },
+         :download_option,
          { based_near_attributes: [:id, :_destroy] }]
       end
       # rubocop:enable Metrics/MethodLength
@@ -68,8 +69,10 @@ module Hyrax
           batch_document_ids.each_with_object({}) do |doc_id, combined_attributes|
             work = ActiveFedora::Base.find(doc_id)
             terms.each do |field|
-              combined_attributes[field] ||= []
-              combined_attributes[field] = (combined_attributes[field] + work[field].to_a).uniq
+              if work[field].respond_to?(:to_a)
+                combined_attributes[field] ||= []
+                combined_attributes[field] = (combined_attributes[field] + work[field].to_a).uniq
+              end
             end
             names << work.to_s
           end

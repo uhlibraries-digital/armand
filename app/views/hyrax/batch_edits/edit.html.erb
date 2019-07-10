@@ -87,6 +87,37 @@
                                 method: :put,
                                 remote: true,
                                 builder: Hyrax::FormBuilder,
+                                html: { id: "form_download_option", class: "ajax-form"},
+                                data: { 'param-key' => @form.model_name.param_key } do |f| %>
+              <div class="col-xs-12 col-sm-4">
+                <a class="accordion-toggle grey glyphicon-chevron-right-helper collapsed" data-toggle="collapse" href="#collapse_download_options" id="expand_link_download_options">
+                  <%= f.input_label "Download" %> <span class="chevron"></span>
+                </a>
+              </div>
+              <div id="collapse_download_options" class="collapse scrolly col-xs-12 col-sm-7">
+                <%= hidden_field_tag('update_type', 'update') %>
+                <%= hidden_field_tag('key', 'download_options') %>
+                <%= render "hyrax/base/form_download", f: f %>
+
+                <% @form.batch_document_ids.each do |batch_id| %>
+                  <%= hidden_field_tag "batch_document_ids[]", batch_id %>
+                <% end %>
+                <div>
+                  <%= f.submit "Save changes", class: 'btn btn-primary field-save', id: "download_options_save" %>
+                  <a class="btn btn-default" data-toggle="collapse" data-parent="#row_download_options" href="#collapse_download_options">Cancel </a>
+                  <div class="status fleft"></div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+
+          <div class="row">
+            <%= simple_form_for @form,
+                                url: hyrax.batch_edits_path,
+                                method: :put,
+                                remote: true,
+                                builder: Hyrax::FormBuilder,
                                 html: { id: "form_permissions", class: "ajax-form"},
                                 data: { 'param-key' => @form.model_name.param_key } do |f| %>
               <div class="col-xs-12 col-sm-4">
@@ -110,7 +141,6 @@
               </div>
             <% end %>
           </div>
-        </div>
       </div> <!-- .tab-content -->
     </div>
   </div>
