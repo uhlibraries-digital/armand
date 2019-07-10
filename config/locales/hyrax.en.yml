@@ -87,6 +87,7 @@ en:
       my:
         heading:
           date: Date
+          download: Download
   simple_form:
     hints:
       defaults:

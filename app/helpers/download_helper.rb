@@ -7,7 +7,8 @@ module DownloadHelper
   }
 
   def download_badge(value)
-    content_tag(:span, text(value), class: "label #{label_class(value)}")
+    return content_tag(:span, text(value), class: "label #{label_class(value)}") unless value.nil?
+    return content_tag(:span, text('all'), class: "label #{label_class('all')}") if value.nil?
   end
 
   def label_class(value)
