@@ -40,4 +40,4 @@ en:
       note_html: 'Only the low resolution download is available. Images: Small'
     none:
       text: 'None'
-      note_html: 'No downloading options are available'
+      note_html: 'No downloading options are available, including the manifest'

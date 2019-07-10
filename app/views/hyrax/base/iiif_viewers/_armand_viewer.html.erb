@@ -22,14 +22,14 @@
           </div>
         <% end %>
       </div>
+      <div class="download-manifest">
+        <%= link_to (image_tag 'iiif_logo.png', alt: "IIIF"), (main_app.polymorphic_url [main_app, :manifest, presenter], { locale: nil }), class: 'download-link-manifest', target: '_blank', title: 'Get manifest' %>
+      </div>
     <% else %>
       <div class="download-message">
         <span class="download-unavailable">Download options are unavailable</span>
       </div>
     <% end %>
-    <div class="download-manifest">
-      <%= link_to (image_tag 'iiif_logo.png', alt: "IIIF"), (main_app.polymorphic_url [main_app, :manifest, presenter], { locale: nil }), class: 'download-link-manifest', target: '_blank', title: 'Get manifest' %>
-    </div>
   </div>
 </div>
 <script type="text/javascript">
