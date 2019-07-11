@@ -39,6 +39,11 @@ module Bcdams
       def iiif_viewer
         :armand_viewer
       end
+
+      def thumbnail_path
+        Hyrax::Engine.routes.default_url_options[:host] = Settings.armand.host
+        Hyrax::Engine.routes.url_helpers.download_url(thumbnail_id, file: 'thumbnail')
+      end
     
     end
   end
