@@ -162,16 +162,29 @@ body {
     }
   }
 
-  .feedback-form {
-
-    color: #fff;
-    background-color: #d9534f;
-    border-color: #d9534f;
+  .feedback {
+    width: 100%;
     text-align: center;
-    margin-left: 100px;
+    margin: 20px 0px;
 
-    .feedback-form:hover {
-      background-color: #d2322d;
+    #feedback-container {
+      text-align: left;
+      margin: 20px 0px;
+
+      .feedback-options {
+        font-weight: 700;
+      }
+
+      .form-horizontal .form-group {
+        margin-right: 0;
+        margin-left: 0;
+      }
+
+      .feedback-btn-container {
+        width: 100%;
+        text-align: right;
+        margin-top: 10px;
+      }
     }
   }
 

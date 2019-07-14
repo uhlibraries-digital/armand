@@ -1,0 +1,33 @@
+<% share_url ||= presenter.permalink %>
+<div class = "feedback">
+  <button id="feedback-btn" type="button" class="btn btn-primary">
+    Give us some feedback
+  </button>
+  <div id="feedback-container" style="display:none" position="centered">
+    <%= form_tag "/feedback", class: "form-horizontal", method: "post" do %>
+      <%= hidden_field_tag 'object_url', share_url %>
+      <div class="form-group">
+        <%= label_tag :email %>
+        <%= text_field(:email, '', id: "feedback-email", class: "form-control") %> 
+      </div>
+      <div class="form-group">
+        <label class="radio-inline">
+          <%= radio_button_tag :feedback_type, 'comment' %>
+          <span class="feedback-options">Comment</span>
+        </label>
+        <label class="radio-inline">
+          <%= radio_button_tag :feedback_type, 'correction' %>
+          <span class="feedback-options">Correction</span>
+        </label>
+        <label class="radio-inline">
+          <%= radio_button_tag :feedback_type, 'bug' %>
+          <span class="feedback-options">Bug</span>
+        </label>
+      </div>
+      <div class="form-group">
+        <%= text_area_tag :comments, '', class: "form-control", rows: "5" %>
+      </div>
+      <%= button_tag "Send", class: "btn btn-primary", type: "submit" %>
+    <% end %>
+  </div>
+</div>
