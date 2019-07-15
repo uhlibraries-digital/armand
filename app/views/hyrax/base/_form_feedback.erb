@@ -27,7 +27,10 @@
       <div class="form-group">
         <%= text_area_tag :comments, '', class: "form-control", rows: "5" %>
       </div>
-      <%= button_tag "Send", class: "btn btn-primary", type: "submit", id: "feedback-save-btn" %>
+      <div class="submit">
+        <%= recaptcha_tags %>
+        <%= button_tag "Send", class: "btn btn-primary", type: "submit", id: "feedback-save-btn" %>
+      </div>
     <% end %>
   </div>
 </div>

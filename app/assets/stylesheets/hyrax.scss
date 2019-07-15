@@ -185,6 +185,23 @@ body {
         text-align: right;
         margin-top: 10px;
       }
+
+      .submit {
+        position: relative;
+        height: 78px;
+
+        .g-recaptcha {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+        }
+
+        #feedback-save-btn {
+          position: absolute;
+          right: 0;
+          bottom: 0;
+        }
+      }
     }
   }
 
@@ -471,6 +488,23 @@ span.download-unavailable {
     }
   }
 
+  .work-type {
+    .feedback {
+      #feedback-container {
+        .submit {
+          height: auto;
+
+          .g-recaptcha {
+            position: relative;
+          }
+
+          #feedback-save-btn {
+            position: relative;
+          }
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: 768px) {
