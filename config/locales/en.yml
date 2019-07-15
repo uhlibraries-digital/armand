@@ -42,3 +42,5 @@ en:
       text: 'None'
       note_html: 'No downloading options are available, including the manifest'
     more_text: 'Find out more'
+  feedback:
+    subject: "Feedback"

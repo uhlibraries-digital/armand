@@ -28,3 +28,12 @@ campus_ip:
 
 iiif:
   endpoint_url: http://iiif.example.com:8182/iiif/2
+
+email:
+  default_from: someone@example.com
+  to: someone@example.com
+  delivery_method: :smtp
+  smtp:
+    address: smtp.example.com
+    port: 25
+    enable_starttls_auto: false
