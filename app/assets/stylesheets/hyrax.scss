@@ -186,6 +186,16 @@ body {
         margin-top: 10px;
       }
 
+      .feedback-thankyou {
+        text-align: center;
+        font-size: 1.5rem;
+      }
+
+      .error {
+        color: red;
+        padding-top: 5px;
+      }
+
       .submit {
         position: relative;
         height: 78px;
@@ -200,8 +210,17 @@ body {
           position: absolute;
           right: 0;
           bottom: 0;
+
+          &.sending::before {
+            font-family: "FontAwesome";
+            content: '\f110';
+            margin-right: 5px;
+            animation: fa-spin 2s infinite linear;
+            display: inline-block;
+          }
         }
       }
+
     }
   }
 
