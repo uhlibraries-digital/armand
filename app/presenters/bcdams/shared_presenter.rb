@@ -41,6 +41,7 @@ module Bcdams
       end
 
       def thumbnail_path
+        return '' if thumbnail_id.nil?
         Hyrax::Engine.routes.default_url_options[:host] = Settings.armand.host
         Hyrax::Engine.routes.url_helpers.download_url(thumbnail_id, file: 'thumbnail')
       end
