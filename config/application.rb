@@ -16,5 +16,10 @@ module Armand
     # -- all .rb files in that directory are automatically loaded.
 
     #config.assets.paths << Rails.root.join("app", "assets", "fonts")
+
+    # This overwrites the configuration for the routes to which the controller is being used. 
+    # Comment this out in order to get the full rails routing error for debugging.
+    config.exceptions_app = self.routes 
+
   end
 end
