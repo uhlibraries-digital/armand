@@ -45,3 +45,30 @@
   color: #666;
   box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
 }
+
+.response {
+  font-weight: normal;
+  margin-bottom: 0;
+  margin-top: 20px;
+  padding-top: 120px;
+  font-family: 'League Gothic', sans-serif;
+  font-size: 3rem;
+  letter-spacing: 0rem;
+  line-height: 3rem;
+  margin-top: 15px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.lead {
+  font-family: 'Milo', sans-serif;
+  font-size: 16px;
+  font-weight: 200;
+  color: #111;
+  margin-top: 16px;
+  margin-bottom: 20px;
+}
+
+.footer.error {
+  margin-top: 0;
+}
