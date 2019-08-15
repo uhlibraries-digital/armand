@@ -80,5 +80,5 @@ gem 'config'
 gem 'hybridge', git: 'https://github.com/uhlibraries-digital/hybridge.git'
 gem 'sidekiq'
 gem 'font-awesome-rails', '~> 4.7'
-gem 'greens_client', git: 'https://github.com/uhlibraries-digital/greens_client.git'
 gem "recaptcha"
+gem 'flexirest', '1.3.33'
