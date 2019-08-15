@@ -75,6 +75,8 @@ module Bcdams
         index.as :stored_searchable, :facetable
       end
 
+      property :douuid, predicate: ::RDF::URI.new("https://vocab.lib.uh.edu/bcdams-map#doUuid"), multiple: false
+
     end
   end
 end
