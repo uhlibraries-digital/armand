@@ -21,5 +21,10 @@ module Armand
     # Comment this out in order to get the full rails routing error for debugging.
     config.exceptions_app = self.routes 
 
+    config.to_prepare do
+      Hyrax::CurationConcern.actor_factory.use UpdateArkActor
+      Hyrax::CurationConcern.actor_factory.use UpdateAspaceActor
+    end
+
   end
 end

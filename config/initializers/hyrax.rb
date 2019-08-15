@@ -288,6 +288,3 @@ Date::DATE_FORMATS[:standard] = "%m/%d/%Y"
 Qa::Authorities::Local.register_subauthority('subjects', 'Qa::Authorities::Local::TableBasedAuthority')
 Qa::Authorities::Local.register_subauthority('languages', 'Qa::Authorities::Local::TableBasedAuthority')
 Qa::Authorities::Local.register_subauthority('genres', 'Qa::Authorities::Local::TableBasedAuthority')
-
-Hyrax::CurationConcern.actor_factory.use UpdateArkActor
-Hyrax::CurationConcern.actor_factory.use UpdateAspaceActor
