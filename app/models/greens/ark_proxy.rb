@@ -1,4 +1,4 @@
-module GreensClient
+module Greens
   class ArkProxy < Flexirest::ProxyBase
     get "/id/:id" do
       response = passthrough

@@ -1,6 +1,6 @@
-module GreensClient
+module Greens
   class Ark < Flexirest::Base
-    proxy GreensClient::ArkProxy
+    proxy Greens::ArkProxy
 
     before_request :add_authentication_details
 
