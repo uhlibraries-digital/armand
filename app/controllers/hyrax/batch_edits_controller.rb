@@ -78,9 +78,9 @@ module Hyrax
     end
 
     private
-    def update_aspace?(do_ark, aspace_uri, aspace_uuid, visibility)
-      return !do_ark.blank? && !aspace_uri.blank? && !aspace_uuid.blank? && !private?(visibility)
-    end
+      def update_aspace?(do_ark, aspace_uri, aspace_uuid, visibility)
+        return !do_ark.blank? && !aspace_uri.blank? && !aspace_uuid.blank? && !private?(visibility)
+      end
 
       def private?(visibility)
         return visibility == Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PRIVATE

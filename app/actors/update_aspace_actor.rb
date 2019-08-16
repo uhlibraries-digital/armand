@@ -7,9 +7,13 @@ class UpdateAspaceActor < Hyrax::Actors::AbstractActor
     aspace_uuid = env.attributes.fetch(:douuid) { nil }
     visibility = env.attributes.fetch(:visibility) { nil }
 
-    if should_update?(do_ark, aspace_uri, aspace_uuid, visibility)
-      UpdateAspaceJob.perform_later(do_ark, aspace_uri, aspace_uuid, title.first || '')
-    end
+    UpdateAspaceJob.perform_later(
+      do_ark, 
+      aspace_uri, 
+      aspace_uuid, 
+      title.first || ''
+    ) if should_update?(do_ark, aspace_uri, aspace_uuid, visibility)
+
     next_actor.update(env)
   end
 
