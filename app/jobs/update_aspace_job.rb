@@ -9,7 +9,7 @@ class UpdateAspaceJob < ActiveJob::Base
     digital_object = get_digital_object do_uuid
     if digital_object.nil?
       Rails.logger.info "Adding Digital Object to #{aspace_uri}"
-      digital_object = new_aspace_do do_uuid
+      digital_object = new_aspace_do do_uuid, title
       new_file_version = new_aspace_file_version ark_url
       digital_object[:file_versions] << new_file_version
       @digital_object = Aspace::DigitalObject.create(
