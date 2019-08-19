@@ -1,9 +1,42 @@
 .download-container {
   width: 100%;
-  background-color: #f2f2f2;
-  padding: 6px;
   overflow: hidden;
   margin-top: 10px;
+
+  .download-options {
+    background-color: #f2f2f2;
+    padding: 6px;
+    overflow: hidden;
+  }
+
+  .access-rights {
+    background-color: #9c9c9c;
+    padding: 6px;
+    color: #fff;
+
+    table {
+      tr {
+        th {
+          font-weight: normal;
+
+          &:after {
+            content: ":";
+          }
+        }
+      }
+
+      td {
+        a {
+          color: #fff;
+        }
+      }
+    }
+
+    ul {
+      margin: 0;
+      padding: 0 0 0 10px;
+    }
+  }
 
   div {
     text-align: left;

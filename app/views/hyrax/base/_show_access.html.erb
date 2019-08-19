@@ -1,0 +1,6 @@
+<div class="access-rights">
+  <table>
+    <%= presenter.attribute_to_html(:rights_statement, render_as: :rights_statement, label: t('simple_form.labels.defaults.rights_statement')) %>
+    <%= presenter.attribute_to_html(:rights_holder, label: t('simple_form.labels.defaults.rights_holder')) %>
+  </table>
+</div>
