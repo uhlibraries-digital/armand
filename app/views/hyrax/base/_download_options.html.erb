@@ -1,6 +1,11 @@
 <div class="download-container">
   <div class="download-options">
     <span class="title">Download Options</span>
+    <% if !presenter.editor? && presenter.download_low? %>
+      <div class="download-message">
+        <span class="download-limited">Download options are limited. <%= link_to t('download.more_text'), hyrax.help_path(anchor: 'download') %></span>
+      </div>
+    <% end %>
     <% if presenter.editor? ||  presenter.download_all? || presenter.download_low?%>
       <div class="download-list">
         <div class="download-btn">
