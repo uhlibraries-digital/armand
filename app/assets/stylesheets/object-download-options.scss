@@ -44,6 +44,8 @@
   }
 
   .title {
+    display: inline-block;
+    margin-bottom: 5px;
     font-weight: 700;
   }
 
@@ -97,4 +99,41 @@
       }
     }
   }
+}
+
+@media (max-width: 768px) {
+  .download-container {
+    .download-btn {
+      float: none;
+      padding: 0;
+      height: auto;
+      text-align: left;
+      width: auto;
+      margin-bottom: 5px;
+
+      a {
+        position: relative;
+        display: block;
+
+        &.medium-btn {
+          padding-top: 6px;
+          padding-bottom: 6px;
+        }
+
+        &.large-btn {
+          padding-top: 6px;
+          padding-bottom: 6px;
+        }
+
+        &.org-btn {
+          margin-left: auto;
+          width: auto;
+          padding-top: 6px;
+          padding-bottom: 6px;
+        }
+
+      }
+    }
+  }
+
 }
