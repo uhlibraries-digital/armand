@@ -1,0 +1,7 @@
+<div class="finding-aid">
+  <% unless presenter.aspaceurl.blank? %>
+    <%= link_to(presenter.aspaceurl.last, target: "_blank") do %>
+      View item in finding aid <i class="fa fa-external-link" aria-hidden="true"></i>
+    <% end %>
+  <% end %>
+</div>

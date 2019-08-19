@@ -1,10 +1,5 @@
 <ul class="nav nav-tabs work-type-tabs" role="tablist">
   <li role="resentation" class="active">
-    <a href="#access" aria-controls="access" role="tab" data-toggle="tab" aria-expanded="false">
-      Access
-    </a>
-  </li>
-  <li role="resentation">
     <a href="#metadata" aria-controls="metadata" role="tab" data-toggle="tab" aria-expanded="false">
       Full Metadata
     </a>
@@ -16,10 +11,7 @@
   </li>
 </ul>
 <div class="tab-content">
-  <div role="tabpanel" class="tab-pane active" id="access">
-    <%= render 'tab_access', presenter: presenter %>
-  </div>
-  <div role="tabpanel" class="tab-pane" id="metadata">
+  <div role="tabpanel" class="tab-pane active" id="metadata">
     <%= render 'tab_metadata', presenter: presenter %>
   </div>
   <div role="tabpanel" class="tab-pane" id="related">
