@@ -152,6 +152,8 @@ body {
     margin-bottom: 2.25rem;
 
     .metadata-table {
+      table-layout: auto;
+
       li {
         float: left;
 
