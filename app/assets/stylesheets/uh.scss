@@ -344,6 +344,9 @@ form.new_user input[type='submit']:hover {
     border: none;
 
     .navbar-nav {
+      margin: 0;
+      padding-top: 8px;
+
       &>.active>a {
         background-color: transparent;
       }
@@ -365,6 +368,7 @@ form.new_user input[type='submit']:hover {
           padding: 0 1rem 0 1rem;
           vertical-align: baseline;
           line-height: 3rem;
+          white-space: nowrap;
 
           &:hover,
           :active {
@@ -408,12 +412,12 @@ button.navbar-toggle {
 .navbar-default .navbar-text {
   color: $cream;
 }
-/* important */
+
 .navbar-text {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-/* important */
+
 input, button, select, textarea {
   font-family: milo;
   font-size: inherit;
@@ -586,3 +590,4 @@ table.striped {
     max-width: 100%;
   }
 }
+
