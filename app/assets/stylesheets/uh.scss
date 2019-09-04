@@ -388,6 +388,7 @@ form.new_user input[type='submit']:hover {
 
 
 }
+
 /*hamburger button menu*/
 
 button.navbar-toggle {
@@ -418,7 +419,10 @@ button.navbar-toggle {
   margin-bottom: 0px;
 }
 
-input, button, select, textarea {
+input,
+button,
+select,
+textarea {
   font-family: milo;
   font-size: inherit;
   line-height: inherit;
@@ -547,6 +551,7 @@ input, button, select, textarea {
   padding: 4px 0;
   margin-right: 0;
 }
+
 /* TABLES */
 table.striped {
   border-collapse: collapse;
@@ -591,3 +596,8 @@ table.striped {
   }
 }
 
+@media (min-width: 768px) {
+  .navbar-left {
+    float: none !important;
+  }
+}
