@@ -3,18 +3,16 @@ class UpdateAspaceActor < Hyrax::Actors::AbstractActor
     do_ark = env.attributes.fetch(:digital_object_ark) { nil }
     title = env.attributes.fetch(:title)
     aspace_url = env.attributes.fetch(:aspaceurl) { nil }
+    aspace_uri = aspace_url.nil? ? nil : aspace_url.gsub(/https?:\/\/[^\/]+/, '')
     aspace_uuid = env.attributes.fetch(:douuid) { nil }
     visibility = env.attributes.fetch(:visibility) { nil }
 
-    if !aspace_url.nil? && !aspace_uuid.nil? && !visibility.nil?
-      aspace_uri = aspace_url.gsub(/https?:\/\/[^\/]+/, '')
-      UpdateAspaceJob.perform_later(
-        do_ark, 
-        aspace_uri, 
-        aspace_uuid, 
-        title.first || ''
-      ) if should_update?(do_ark, aspace_uri, aspace_uuid, visibility)
-    end
+    UpdateAspaceJob.perform_later(
+      do_ark, 
+      aspace_uri, 
+      aspace_uuid, 
+      title.first || ''
+    ) if should_update?(do_ark, aspace_uri, aspace_uuid, visibility)
 
     next_actor.update(env)
   end
