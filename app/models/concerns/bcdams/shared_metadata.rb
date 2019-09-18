@@ -77,6 +77,10 @@ module Bcdams
 
       property :douuid, predicate: ::RDF::URI.new("https://vocab.lib.uh.edu/bcdams-map#doUuid"), multiple: false
 
+      property :transcript, predicate: ::RDF::URI.new("https://vocab.lib.uh.edu/bcdams-map#transcript"), multiple: false do |index|
+        index.as :stored_searchable
+      end
+
     end
   end
 end
