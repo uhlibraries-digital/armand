@@ -45,5 +45,6 @@ class SolrDocument
   attribute :digital_object_ark, Solr::Array, solr_name('digital_object_ark')
   attribute :rights_holder, Solr::Array, solr_name('rights_holder')
   attribute :provenance, Solr::Array, solr_name('provenance')
+  attribute :transcript, Solr::Array, solr_name('transcript')
 
 end
