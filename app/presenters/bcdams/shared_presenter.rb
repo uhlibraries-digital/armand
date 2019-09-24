@@ -8,6 +8,7 @@ module Bcdams
                :place, :series_title, :time_period, :resource_access_rights,
                :aspaceurl, :donor, :note, :related_item, :preservation_location, 
                :digital_object_ark, :rights_holder, :provenance, :download_option,
+               :transcript,
                to: :solr_document
     
       def permalink

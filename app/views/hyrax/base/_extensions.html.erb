@@ -9,6 +9,13 @@
       Related Items
     </a>
   </li>
+  <% if presenter.editor? %>
+    <li role="resentation">
+      <a href="#ocr" aria-controls="ocr" role="tab" data-toggle="tab" aria-expanded="false">
+        OCR - Staff Only
+      </a>
+    </li>
+  <% end %>
 </ul>
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane active" id="metadata">
@@ -17,4 +24,9 @@
   <div role="tabpanel" class="tab-pane" id="related">
     <%= render 'tab_related_items', presenter: presenter %>
   </div>
+  <% if presenter.editor? %>
+    <div role="tabpanel" class="tab-pane" id="ocr">
+      <%= render 'tab_ocr', presenter: presenter %>
+    </div>
+  <% end %>
 </div>
