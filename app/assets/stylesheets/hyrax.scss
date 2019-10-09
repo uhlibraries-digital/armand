@@ -407,7 +407,7 @@ body {
 
 .home-content {
   position: relative;
-  background-image: url(/assets/homepage_backdrop.png);
+  background-image: image-url("homepage_backdrop.png");
   background-position: 50% 0%;
   background-size: cover;
 
