@@ -4,14 +4,18 @@ module Aspace
     perform_caching false
 
     def self.session
-      if @session.nil?
-        @session = self._request(
+      if @session.nil? || @session[:expires] <= Time.now.to_i
+        data = self._request(
           "#{Settings.aspace.endpoint}/users/#{Settings.aspace.username}/login",
           :post,
           {password: Settings.aspace.password}
         )
+        @session = {
+          id: data.session,
+          expires: Time.now.to_i + 3600
+        }
       end
-      @session.session
+      @session[:id]
     end
   end
 end
