@@ -53,7 +53,7 @@ module Hyrax
       InheritPermissionsJob.perform_now(obj)
       VisibilityCopyJob.perform_now(obj)
 
-      aspace_uri = obj.aspaceurl.gsub(/https?:\/\/[^\/]+/, '')
+      aspace_uri = obj.aspaceurl.nil? ? '' : obj.aspaceurl.gsub(/https?:\/\/[^\/]+/, '')
       UpdateAspaceJob.perform_later(
         obj.digital_object_ark, 
         aspace_uri, 
