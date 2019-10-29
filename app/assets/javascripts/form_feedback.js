@@ -1,4 +1,4 @@
-$(document).ready(function () {
+Blacklight.onLoad(function () {
   $('#feedback-btn').click(function () {
     $('#feedback-container').toggle();
   })
