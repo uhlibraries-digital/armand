@@ -47,7 +47,7 @@ Devise.setup do |config|
   config.cas_validate_url = Settings.cas.validate_url
   config.cas_create_user = Settings.cas.create_user
   config.cas_username_column = "email"
-  config.cas_user_identifier = "email"
+  config.cas_user_identifier = Settings.cas.email_attribute.to_s
 
   # Configure parameters from the request object used for authentication. Each entry
   # given should be a request method and it will automatically be passed to the
