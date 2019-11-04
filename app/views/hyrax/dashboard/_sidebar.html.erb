@@ -10,7 +10,7 @@
         <div class="profile-data">
           <div class="profile-data-name"><%= current_user.name %></div>
         </div>
-        <div class="profile-logout">
+        <div data-turbolinks="false" class="profile-logout">
           <%= link_to t("hyrax.toolbar.profile.logout"), main_app.destroy_user_session_path %>
         </div>
       </div>
