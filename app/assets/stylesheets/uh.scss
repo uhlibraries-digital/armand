@@ -396,8 +396,11 @@ button.navbar-toggle {
 }
 
 .navbar-toggle-hamburger {
-  float: left;
-  margin-top: 3px;
+  font-size: 1rem;
+  color: $cream;
+  line-height: 20px;
+  display: inline-block;
+  margin-right: 5px;
 }
 
 #navigation>nav>div>button>.navbar-text.visible-xs-inline-block {
