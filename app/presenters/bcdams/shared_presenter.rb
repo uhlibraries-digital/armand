@@ -79,7 +79,7 @@ module Bcdams
 
         # Build HTML for metadata table
         markup = ""
-        markup << "<tr><th>Location Information</th>"
+        markup << "<tr><th>Archival Location</th>"
         markup << "<td><ul class='tabular'>"
         markup << "<li class='attribute attribute-resource_type'>#{location_str}</li>"
         markup << "</ul></td>"
