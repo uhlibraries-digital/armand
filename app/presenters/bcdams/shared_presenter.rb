@@ -52,7 +52,7 @@ module Bcdams
 
         # Get the archival object
         aspace_uri = aspaceurl.first.gsub(/https?:\/\/[^\/]+/, '')
-        object = Aspace::ArchivalObject.find(aspace_uri)
+        object = Aspace::ArchivalObject.find(aspace_uri) rescue nil
         return '' if object.nil?
 
         # Filter instances for containers, don't want other instance types
@@ -64,11 +64,11 @@ module Bcdams
         # Only want the first container
         container = containers.first[:sub_container]
         # Get the top container i.e. Box, Drawer, Shelf, etc.
-        top_container = Aspace::TopContainer.find(container[:top_container][:ref])
+        top_container = Aspace::TopContainer.find(container[:top_container][:ref]) rescue nil
 
         # Get the resource
         # Used to get the accession number
-        resource = Aspace::Resource.find(object[:resource][:ref])
+        resource = Aspace::Resource.find(object[:resource][:ref]) rescue nil
 
         # Build location string
         location_str =  ""
