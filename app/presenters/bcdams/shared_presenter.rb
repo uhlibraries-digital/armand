@@ -46,6 +46,46 @@ module Bcdams
         Hyrax::Engine.routes.default_url_options[:host] = Settings.armand.host
         Hyrax::Engine.routes.url_helpers.download_url(thumbnail_id, file: 'thumbnail')
       end
+
+      def location_info
+        return '' if aspaceurl.first.blank?
+
+        # Get the archival object
+        aspace_uri = aspaceurl.first.gsub(/https?:\/\/[^\/]+/, '')
+        object = Aspace::ArchivalObject.find(aspace_uri) rescue nil
+        return '' if object.nil?
+
+        # Filter instances for containers, don't want other instance types
+        containers = object[:instances].select do |instance|
+          !(instance[:sub_container].nil? || instance[:sub_container][:top_container].nil?)
+        end
+
+        # Only want the first container
+        container = containers.first[:sub_container] rescue nil
+        # Get the top container i.e. Box, Drawer, Shelf, etc.
+        top_container = Aspace::TopContainer.find(container[:top_container][:ref]) rescue nil
+
+        # Get the resource
+        # Used to get the accession number
+        resource = Aspace::Resource.find(object[:resource][:ref]) rescue nil
+
+        # Build location string
+        location_str =  ""
+        location_str << "#{resource[:id_0]}" unless resource.nil?
+        location_str << ", #{top_container[:type].capitalize} #{top_container[:indicator]}" unless top_container.nil?
+        location_str << ", #{container[:type_2].capitalize} #{container[:indicator_2]}" unless container.nil? || container[:type_2].blank?
+        location_str << ", #{container[:type_3].capitalize} #{container[:indicator_3]}" unless container.nil? || container[:type_3].blank?
+
+        # Build HTML for metadata table
+        markup = ""
+        markup << "<tr><th>Archival Location</th>"
+        markup << "<td><ul class='tabular'>"
+        markup << "<li class='attribute attribute-resource_type'>#{location_str}</li>"
+        markup << "</ul></td>"
+        markup << "</tr>"
+
+        markup.html_safe
+      end
     
     end
   end

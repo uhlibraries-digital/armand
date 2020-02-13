@@ -17,6 +17,7 @@
   <%= presenter.attribute_to_html(:extent) %>
   <%= presenter.attribute_to_html(:identifier) %>
   <%= presenter.attribute_to_html(:provenance, render_as: :faceted) %>
+  <%= presenter.location_info %>
   <%= presenter.attribute_to_html(:donor) %>
   <%= presenter.attribute_to_html(:rights_statement, render_as: :rights_statement, label: t('simple_form.labels.defaults.rights_statement')) %>
   <%= presenter.attribute_to_html(:rights_holder, label: t('simple_form.labels.defaults.rights_holder')) %>
