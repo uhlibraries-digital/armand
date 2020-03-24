@@ -1,0 +1,17 @@
+<div class="download-container" style="width: 100%">
+  <div class="download-options">
+    <span class="title">Download Options</span>
+    <% if presenter.editor? || presenter.download_all? || presenter.download_low? %>
+      <div class="download-list">
+        <div class="download-btn">
+          <%= link_to "Original", hyrax.download_path(file_set), class: "org-btn", target: :_blank, id: "download-link-org", data: { label: file_set.id } %>
+        </div>
+      </div>
+    <% else %>
+      <div class="download-message">
+        <span class="download-unavailable">Download options are unavailable. <%= link_to t('download.more_text'), hyrax.help_path(anchor: 'download') %></span>
+      </div>
+    <% end %>
+  </div>
+  <%= render 'show_access', presenter: @presenter %>
+</div>
