@@ -82,3 +82,4 @@ gem 'sidekiq'
 gem 'font-awesome-rails', '~> 4.7'
 gem "recaptcha"
 gem 'flexirest', '1.3.33'
+gem 'with_locking'
