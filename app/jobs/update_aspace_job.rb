@@ -22,10 +22,8 @@ class UpdateAspaceJob < ActiveJob::Base
         @digital_object = Aspace::DigitalObject.create(
           repo_id: repository_id,
           digital_object: digital_object)
-        new_instance = new_aspace_instance @digital_object.uri
-        @archival_object.instances << new_instance
-        @archival_object.id = @archival_object.uri
-        @archival_object.save
+        
+        add_digital_object @digital_object, aspace_uri
       elsif !has_do_ark(digital_object.file_versions, ark_url)
         @digital_object = Aspace::DigitalObject.find(digital_object.uri)
         new_file_version = new_aspace_file_version ark_url
@@ -34,7 +32,21 @@ class UpdateAspaceJob < ActiveJob::Base
         @digital_object.save
       else
         Rails.logger.info "Digtal object for #{ark_url} already exists"
-        return
+      end
+    end
+  end
+
+  def add_digital_object(digital_object, aspace_uri)
+    archival_object = Aspace::ArchivalObject.find(aspace_uri)
+    new_instance = new_aspace_instance digital_object.uri
+    archival_object.instances << new_instance
+    archival_object.id = archival_object.uri
+
+    begin
+      archival_object.save
+    rescue Flexirest::HTTPClientException => e
+      if e.status == 409
+        add_digital_object digital_object, aspace_uri
       end
     end
   end
