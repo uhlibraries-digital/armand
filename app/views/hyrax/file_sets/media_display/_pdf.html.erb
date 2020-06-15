@@ -1,7 +1,10 @@
 <div id="pdf-viewer" style="width: 100%" align="left">
-  <object data="<%= hyrax.download_path(file_set, disposition: 'inline') %>#view=Fit" type="application/pdf" width="100%" height="800px" align="left">
-    <param name="view" value="Fit" />
-  </object>
+  <iframe 
+    name="PDF Viewer" 
+    src="/pdfjs/web/viewer.html?file=<%= u(hyrax.download_path(file_set, disposition: 'inline')) %>" 
+    width="100%" 
+    height="800px" 
+    align="left"></iframe>
 </div>
 <%= render 'download_option_pdf', presenter: @presenter, file_set: file_set %>
 
