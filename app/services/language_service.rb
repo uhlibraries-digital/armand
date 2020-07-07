@@ -9,7 +9,6 @@ module LanguageService
   end
 
   def self.label(id)
-    Rails.logger.info("ID: #{id}, AUTHORITY: #{authority.find(id).inspect}")
     authority.find(id).fetch('term')
   end
 

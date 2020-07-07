@@ -11,4 +11,9 @@ module ApplicationHelper
     end
     humanized_date.join('; ')
   end
+
+  def language_term(value)
+    LanguageService.label(value) { value }
+  end
+
 end

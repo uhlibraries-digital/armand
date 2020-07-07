@@ -47,7 +47,7 @@ class CatalogController < ApplicationController
     config.add_facet_field solr_name("contributor", :facetable), label: "Contributor", limit: 5
     config.add_facet_field solr_name("keyword", :facetable), limit: 5
     config.add_facet_field solr_name("subject", :facetable), limit: 5
-    config.add_facet_field solr_name("language", :facetable), limit: 5
+    config.add_facet_field solr_name("language", :facetable), limit: 5, helper_method: :language_term
     config.add_facet_field solr_name("place", :facetable), label: "Place", limit: 5
     config.add_facet_field solr_name("genre", :facetable), label: "Genre", limit: 5
     config.add_facet_field solr_name("time_period", :facetable), label: "Time Period", limit: 5
