@@ -1,0 +1,39 @@
+terms:
+  - id: zho
+    term: Chinese
+  - id: hrv
+    term: Croatian
+  - id: nld
+    term: Dutch
+  - id: eng
+    term: English
+  - id: fas
+    term: Farsi
+  - id: fin
+    term: Finnish
+  - id: fre
+    term: French
+  - id: deu
+    term: German
+  - id: heb
+    term: Hebrew
+  - id: isl
+    term: Icelandic
+  - id: kor
+    term: Korean
+  - id: lat
+    term: Latin
+  - id: cmn
+    term: Mandarin
+  - id: pol
+    term: Polish
+  - id: por
+    term: Portuguese
+  - id: srp
+    term: Serbian
+  - id: spa
+    term: Spanish
+  - id: tur
+    term: Turkish
+  - id: zap
+    term: Zapotec
