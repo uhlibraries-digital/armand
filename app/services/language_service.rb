@@ -9,7 +9,7 @@ module LanguageService
   end
 
   def self.label(id)
-    authority.find(id).fetch('term')
+    authority.find(id).fetch('term') rescue id
   end
 
 end
