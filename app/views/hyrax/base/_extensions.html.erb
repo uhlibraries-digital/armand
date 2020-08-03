@@ -11,8 +11,8 @@
   </li>
   <% if presenter.editor? %>
     <li role="resentation">
-      <a href="#ocr" aria-controls="ocr" role="tab" data-toggle="tab" aria-expanded="false">
-        OCR - Staff Only
+      <a href="#files" aria-controls="files" role="tab" data-toggle="tab" aria-expanded="false">
+        Files - Staff Only
       </a>
     </li>
   <% end %>
@@ -25,8 +25,8 @@
     <%= render 'tab_related_items', presenter: presenter %>
   </div>
   <% if presenter.editor? %>
-    <div role="tabpanel" class="tab-pane" id="ocr">
-      <%= render 'tab_ocr', presenter: presenter %>
+    <div role="tabpanel" class="tab-pane" id="files">
+      <%= render 'tab_files', presenter: presenter %>
     </div>
   <% end %>
 </div>

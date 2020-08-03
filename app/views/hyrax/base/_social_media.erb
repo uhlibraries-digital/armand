@@ -1,5 +1,5 @@
 <% page_title ||= content_for?(:page_title) ? content_for(:page_title) : default_page_title %>
-<% share_url ||= presenter.permalink %>
+<% share_url ||= presenter.permalink rescue return %>
 <div class="social-media">
 
   <div class="permalink">

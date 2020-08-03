@@ -13,6 +13,7 @@
       <%= f.radio_button :visibility, Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_AUTHENTICATED %>
       <%= visibility_badge(Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_AUTHENTICATED) %>
     </label>
+    <% if self.respond_to?(:ip_address) %>
     <label class="radio">
       <%= f.radio_button :visibility, Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_IP %>
       <div class="form-inline">
@@ -20,6 +21,7 @@
         <%= f.input :ip_address, as: :multi_value, wrapper: :inline, include_blank: false, label: 'IP Address' %>
       </div>
     </label>
+    <% end %>
     <label class="radio">
       <%= f.radio_button :visibility, Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PRIVATE %>
       <%= visibility_badge(Hydra::AccessControls::AccessRight::VISIBILITY_TEXT_VALUE_PRIVATE) %>

@@ -6,5 +6,7 @@
     height="800px" 
     align="left"></iframe>
 </div>
-<%= render 'download_option_pdf', presenter: @presenter, file_set: file_set %>
+<% if !@presenter.nil? %>
+  <%= render 'download_option_pdf', presenter: @presenter, file_set: file_set %>
+<% end %>
 
