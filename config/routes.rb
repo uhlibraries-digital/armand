@@ -2,6 +2,7 @@ require 'sidekiq/web'
 
 Rails.application.routes.draw do
   mount Hybridge::Engine => '/hybridge'
+  concern :oai_provider, BlacklightOaiProvider::Routes.new
 
   authenticate :user, lambda { |u| u.can? :read, :admin_dashboard } do
     mount Sidekiq::Web => '/sidekiq'
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   concern :searchable, Blacklight::Routes::Searchable.new
 
   resource :catalog, only: [:index], as: 'catalog', path: '/catalog', controller: 'catalog' do
+    concerns :oai_provider
     concerns :searchable
   end
 

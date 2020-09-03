@@ -1,7 +1,9 @@
 fits_path: "/opt/fits/fits.sh"
 
 armand:
+  name: Repository Name
   host: example.com
+  oai_url: http://example.com/catalog/oai
 
 hybridge:
   filesystem: /var/ingest

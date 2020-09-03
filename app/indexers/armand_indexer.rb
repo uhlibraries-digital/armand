@@ -30,6 +30,8 @@ class ArmandIndexer < Hyrax::WorkIndexer
       admin_set_label = object.admin_set.to_s
       solr_doc['admin_set_sim']   = admin_set_label
       solr_doc['admin_set_tesim'] = admin_set_label
+
+      solr_doc['do_ark_url_tesim'] = Settings.greens.base_url + object.digital_object_ark unless object.digital_object_ark.nil?
     end
   end
 end

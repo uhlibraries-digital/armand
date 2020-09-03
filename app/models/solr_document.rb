@@ -2,6 +2,7 @@
 class SolrDocument
   include Blacklight::Solr::Document
   include Blacklight::Gallery::OpenseadragonSolrDocument
+  include BlacklightOaiProvider::SolrDocument
 
   # Adds Hyrax behaviors to the SolrDocument.
   include Hyrax::SolrDocumentBehavior
@@ -46,5 +47,22 @@ class SolrDocument
   attribute :rights_holder, Solr::Array, solr_name('rights_holder')
   attribute :provenance, Solr::Array, solr_name('provenance')
   attribute :transcript, Solr::Array, solr_name('transcript')
+
+  # OAI Metadata fields (DC only)
+  field_semantics.merge!(
+    title: "title_tesim",
+    creator: "creator_tesim",
+    subject: "subject_tesim",
+    description: "description_tesim",
+    publisher: "publisher_tesim",
+    contributor: "contributor_tesim",
+    date: "date_tesim",
+    type: "resource_type_tesim",
+    format: "genre_tesim",
+    identifier: "do_ark_url_tesim",
+    language: "language_tesim",
+    coverage: "place_tesim",
+    rights: "rights_statement_tesim"
+  )
 
 end
