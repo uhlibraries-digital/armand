@@ -23,6 +23,9 @@ module Hyrax
           (solr_doc['member_of_collection_ids_ssim'] ||= []) << col.id
           (solr_doc['member_of_collections_ssim'] ||= []) << col.to_s
         end
+
+        Hyrax::Engine.routes.default_url_options[:host] = Settings.armand.host
+        solr_doc['collection_url_tesim'] = Hyrax::Engine.routes.url_helpers.collection_url(object.id)
       end
     end
   end
