@@ -5,6 +5,7 @@ armand:
   host: example.com
   oai_url: http://example.com/catalog/oai
   oai_prefix: 'oai:localhost'
+  oai_admin_email: 'admin@localhost'
 
 hybridge:
   filesystem: /var/ingest

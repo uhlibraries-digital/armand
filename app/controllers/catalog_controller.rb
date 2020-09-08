@@ -314,7 +314,8 @@ class CatalogController < ApplicationController
       provider: {
         repository_name: Settings.armand.name,
         repository_url: Settings.armand.oai_url,
-        record_prefix: Settings.armand.oai_prefix
+        record_prefix: Settings.armand.oai_prefix,
+        admin_email: Settings.armand.oai_admin_email
       },
       document: {
         limit: 25,
