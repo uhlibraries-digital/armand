@@ -62,7 +62,9 @@ class SolrDocument
     identifier: ["do_ark_url_tesim", "collection_url_tesim"],
     language: "language_tesim",
     coverage: "place_tesim",
-    rights: "rights_statement_tesim"
+    rights: "rights_statement_tesim",
+    relation: "provenance_tesim",
+    source: ["aspaceurl_tesim", "identifier_tesim"]
   )
 
 end
