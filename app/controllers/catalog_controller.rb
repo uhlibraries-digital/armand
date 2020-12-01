@@ -320,7 +320,8 @@ class CatalogController < ApplicationController
       document: {
         limit: 25,
         set_fields: [
-          { label: 'type', solr_field: 'has_model_ssim' }
+          { label: 'type', solr_field: 'has_model_ssim' },
+          { label: 'provenance', solr_field: 'provenance_sim' }
         ]
       }
     }
