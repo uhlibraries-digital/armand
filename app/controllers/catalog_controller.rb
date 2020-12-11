@@ -321,7 +321,8 @@ class CatalogController < ApplicationController
         limit: 25,
         set_fields: [
           { label: 'type', solr_field: 'has_model_ssim' },
-          { label: 'provenance', solr_field: 'provenance_sim' }
+          { label: 'provenance', solr_field: 'provenance_sim' },
+          { label: 'collection', solr_field: 'member_of_collections_ssim' }
         ]
       }
     }
