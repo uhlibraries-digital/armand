@@ -110,9 +110,10 @@ class CatalogController < ApplicationController
     config.add_show_field solr_name("genre", :stored_searchable)
     config.add_show_field solr_name("place", :stored_searchable)
     config.add_show_field solr_name("time_period", :stored_searchable)
-    config.add_show_field solr_name("date_uploaded", :stored_searchable)
-    config.add_show_field solr_name("date_modified", :stored_searchable)
-    config.add_show_field solr_name("date_created", :stored_searchable)
+    config.add_show_field solr_name("date", :stored_searchable)
+    # config.add_show_field solr_name("date_uploaded", :stored_searchable)
+    # config.add_show_field solr_name("date_modified", :stored_searchable)
+    # config.add_show_field solr_name("date_created", :stored_searchable)
     config.add_show_field solr_name("rights_statement", :stored_searchable)
     config.add_show_field solr_name("license", :stored_searchable)
     config.add_show_field solr_name("resource_type", :stored_searchable), label: "Type"
