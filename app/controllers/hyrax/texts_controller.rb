@@ -7,6 +7,7 @@ module Hyrax
     include Hyrax::WorksControllerBehavior
     include Hyrax::BreadcrumbsForWorks
     self.curation_concern_type = ::Text
+    skip_authorize_resource :only => :thumbnail
 
     # Use this line if you want to use a custom presenter
     self.show_presenter = Hyrax::TextPresenter
