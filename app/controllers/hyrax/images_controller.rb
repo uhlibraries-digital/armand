@@ -10,5 +10,9 @@ module Hyrax
 
     # Use this line if you want to use a custom presenter
     self.show_presenter = Hyrax::ImagePresenter
+
+    def thumbnail
+      redirect_to presenter.thumbnail_path
+    end
   end
 end

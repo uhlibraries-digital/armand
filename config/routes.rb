@@ -43,6 +43,18 @@ Rails.application.routes.draw do
     end
   end
 
+  namespace :hyrax, path: :concern do
+    concerns_to_route.each do |curation_concern_name|
+      namespaced_resources curation_concern_name, only: [] do
+        member do
+          get :thumbnail
+        end
+      end
+    end
+  end
+
+  get '/collections/:id/thumbnail' => 'hyrax/collections#thumbnail'
+
   post '/feedback' => 'feedback#generate'
 
   get '/404' => 'error#missing'
