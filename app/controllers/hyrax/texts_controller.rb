@@ -13,7 +13,14 @@ module Hyrax
     self.show_presenter = Hyrax::TextPresenter
 
     def thumbnail
-      redirect_to presenter.thumbnail_path
+      # load curation_concern manually because we need to skip authorize for thumbnail use
+      begin
+        curation_concern = _curation_concern_type.find(params[:id])
+      rescue
+        raise Hyrax::ObjectNotFoundError
+      end
+      path = Hyrax::Engine.routes.url_helpers.download_path(curation_concern.thumbnail_id, file: 'thumbnail')
+      redirect_to path
     end
   end
 end
