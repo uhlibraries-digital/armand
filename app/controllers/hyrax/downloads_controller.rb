@@ -44,7 +44,7 @@ module Hyrax
       # Hydra::Ability#download_permissions can't be used in this case because it assumes
       # that files are in a LDP basic container, and thus, included in the asset's uri.
       def authorize_download!
-        authorize! :download, params[asset_param_key]
+        authorize! :download, params[asset_param_key] unless params[:file] == 'thumbnail'
       rescue CanCan::AccessDenied
         unauthorized_image = Rails.root.join("app", "assets", "images", "unauthorized.png")
         send_file unauthorized_image, status: :unauthorized
