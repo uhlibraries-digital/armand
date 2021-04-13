@@ -1,0 +1,27 @@
+<% if Rails.env.production? %>
+  <%  array_of_ids = presenter.list_of_item_ids_to_display %>
+  <%  members = presenter.member_presenters_for(array_of_ids) %>
+  <script type="text/javascript">
+    
+    // GA Event for object download button
+    $('.download-btn').on('click', function(e) {
+      const ark = "<%= presenter.digital_object_ark.first %>";
+      const collection = "<%= presenter.member_of_collection_presenters.join('; ') %>";
+      const type = $('a', this).attr('id') === 'download-link-org' ? 'Original' : 'Low Resolution';
+
+      let filename = "<%= members.first.link_name || '' %>";
+      try {
+        const viewer = $('.uv.viewer iframe')[0].contentWindow;
+        filename = viewer.$('.thumb.selected .info .label').attr('title') || filename;
+      } catch(e) { }
+
+      ga('send', {
+        hitType: 'event',
+        eventCategory: 'object',
+        eventAction: 'download',
+        eventLabel: `${ark} | ${collection} | ${type} | ${filename}`
+      });
+    });
+
+  </script>
+<% end %>
