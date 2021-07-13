@@ -26,6 +26,9 @@
       <div class="download-manifest">
         <%= link_to (image_tag 'iiif_logo.png', alt: "IIIF"), (main_app.polymorphic_url [main_app, :manifest, presenter], { locale: nil }), class: 'download-link-manifest', target: '_blank', title: 'Get manifest' %>
       </div>
+      <div class="copyright-message">
+        <span class="copyright-terms">By downloading, you agree to the <%= link_to t('download.copyright'), hyrax.help_path(anchor: 'copyright') %>.</span>
+      </div>
     <% else %>
       <div class="download-message">
         <span class="download-unavailable">Download options are unavailable. <%= link_to t('download.more_text'), hyrax.help_path(anchor: 'download') %></span>
