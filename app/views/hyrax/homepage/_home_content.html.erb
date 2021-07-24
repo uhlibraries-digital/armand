@@ -8,7 +8,10 @@
       <li><span>or browse</span></li>
       <li>
         <%= link_to "Collections", 
-          main_app.search_catalog_path(f: { human_readable_type_sim: ["Collection"]}),
+          main_app.search_catalog_path(
+            f: { human_readable_type_sim: ["Collection"]},
+            sort: 'sort_title_ssi asc, system_create_dtsi desc',
+            per_page: 100),
           :title => "browse collections"
         %>,
       </li>
