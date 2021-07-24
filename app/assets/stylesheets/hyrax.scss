@@ -399,6 +399,14 @@ body {
   }
 }
 
+.catalog img {
+  min-width: 120px;
+}
+
+.search-result-wrapper {
+  padding-bottom: 30px;
+}
+
 .search-result-wrapper .search-results-title-row .search-result-title {
   display: inline-block;
   margin: 0;
