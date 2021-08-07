@@ -1,8 +1,9 @@
 development:
   archivist:
     - archivist1@example.com
+    - slwatkins@uh.edu
   admin:
-    - admin@uh.edu
+    - slwatkins@uh.edu
     - archivist1@example.com
 
 test:

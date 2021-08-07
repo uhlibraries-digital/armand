@@ -6,12 +6,26 @@
 
 Armand is a digital repository based on [Hyrax](https://github.com/samvera/hyrax)
 
-## Installation
+## Manual Installation
 
 1. Cone repository
 2. Install: `bundle install`
 3. Setup databases: `bundle exec rake db:setup`
 4. Create default Admin Set: `rake hyrax:default_admin_set:create`
+
+## Docker
+
+Intial setup. Run the command below to get Armand setup for the first time in docker
+```
+docker-compose run --rm -v $PWD/solr/config:/config solr bash -c "precreate-core armand-development /config"
+docker-compose run --rm app rails db:migrate
+docker-compose run --rm app rake hyrax:default_admin_set:create
+```
+
+Run Armand
+```
+docker-compose up app
+```
 
 ## Dependencies
 

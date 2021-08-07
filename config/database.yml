@@ -6,12 +6,15 @@
 #
 default: &default
   adapter: postgresql
+  host: <%= ENV['DATABASE_HOST'] %>
+  username: <%= ENV['DATABASE_USER'] %>
+  password: <%= ENV['DATABASE_PASSWORD'] %>
   pool: 5
   timeout: 5000
 
 development:
   <<: *default
-  database: armand_development
+  database: <%= ENV['DATABASE_NAME'] %>
   encoding: unicode
   pool: 50
 
