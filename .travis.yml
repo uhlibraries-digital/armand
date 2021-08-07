@@ -6,6 +6,10 @@ addons:
   chrome: stable
 
 before_install:
+  - wget -q https://github.com/seanlw/armand-dev-vagrant/raw/master/valkyrie-2.0.0rc2.gem -O /tmp/valkyrie-2.0.0rc2.gem
+  - gem install dry-core -v 0.6.0
+  - gem install dry-container -v 0.7.2
+  - gem install /tmp/valkyrie-2.0.0rc2.gem
   - gem update --system
   - gem install bundler
   - google-chrome-stable --headless --disable-gpu --no-sandbox --remote-debugging-port=9222 
