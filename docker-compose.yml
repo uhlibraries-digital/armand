@@ -73,8 +73,8 @@ services:
     restart: always
     env_file: .env
     environment: 
-     - DISABLE_REDIS_CLUSTER=true
-    command: bundle exec sidekiq -q default
+      - DISABLE_REDIS_CLUSTER=true
+    command: ["bundle", "exec", "sidekiq", "-q", "default"]
     volumes:
       - ./ingest_packages:/ingest_packages
       - .:/armand-app
