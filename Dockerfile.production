@@ -38,6 +38,7 @@ RUN mkdir -p /app/valkyrie && \
   cd /app/valkyrie && \
   wget -q https://github.com/seanlw/armand-dev-vagrant/raw/master/valkyrie-2.0.0rc2.gem -O valkyrie-2.0.0rc2.gem && \
   gem install -q dry-core -v 0.6.0 && \
+  gem install -q dry-configurable -v 0.12.1 && \
   gem install -q dry-container -v 0.7.2 && \
   gem install -q /app/valkyrie/valkyrie-2.0.0rc2.gem
 
