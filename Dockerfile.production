@@ -34,12 +34,13 @@ RUN mkdir -p /opt/fits && \
   rm -f /opt/fits/tools/mediainfo/linux/libzen.so.0
 ENV PATH="${PATH}:/opt/fits"
 
-RUN mkdir -p /app/valkyrie && \
-  cd /app/valkyrie && \
-  wget -q https://github.com/seanlw/armand-dev-vagrant/raw/master/valkyrie-2.0.0rc2.gem -O valkyrie-2.0.0rc2.gem && \
+RUN mkdir -p /app/valkyrie 
+COPY ./vendor/valkyrie/valkyrie-2.0.0rc2.gem /app/valkyrie/valkyrie-2.0.0rc2.gem
+RUN cd /app/valkyrie && \
   gem install -q dry-core -v 0.6.0 && \
   gem install -q dry-configurable -v 0.12.1 && \
   gem install -q dry-container -v 0.7.2 && \
+  gem install -q nokogiri -v 1.12.5 && \
   gem install -q /app/valkyrie/valkyrie-2.0.0rc2.gem
 
 RUN gem install bundler && bundle install
