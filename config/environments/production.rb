@@ -39,6 +39,9 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
+  # Specifies trusted proxies
+  config.action_dispatch.trusted_proxies = %w(127.0.0.1 10.0.0.0/8).map { |proxy| IPAddr.new(proxy) }
+
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
   # config.action_cable.url = 'wss://example.com/cable'
