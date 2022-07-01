@@ -1,0 +1,12 @@
+.bundle
+.git
+.DS_Store
+.gitignore
+.env
+Dockerfile
+docker-compose.yml
+tmp
+config/settings/*
+config/settings.local.yml
+log
+fits.log
