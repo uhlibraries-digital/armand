@@ -8,14 +8,14 @@ class UpdateAspaceJob < ActiveJob::Base
     
     while WithLocking.locked?("posting-archivesspace") do
       sleep_timer = rand(15) / 10.0
-      Rails.logger.info "Posting to ArchivesSpace '#{aspace_uri}' locked, trying again in #{sleep_timer} seconds"
+      logger.info "Posting to ArchivesSpace '#{aspace_uri}' locked, trying again in #{sleep_timer} seconds"
       sleep(sleep_timer) 
     end
 
     WithLocking.run(name: "posting-archivesspace") do
       digital_object = get_digital_object do_uuid
       if digital_object.nil?
-        Rails.logger.info "Adding Digital Object to #{aspace_uri}"
+        logger.info "Adding Digital Object to #{aspace_uri}"
         digital_object = new_aspace_do do_uuid, title
         new_file_version = new_aspace_file_version ark_url
         digital_object[:file_versions] << new_file_version
@@ -31,7 +31,7 @@ class UpdateAspaceJob < ActiveJob::Base
         @digital_object.id = @digital_object.uri
         @digital_object.save
       else
-        Rails.logger.info "Digtal object for #{ark_url} already exists"
+        logger.info "Digtal object for #{ark_url} already exists"
       end
     end
   end

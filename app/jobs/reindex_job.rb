@@ -5,9 +5,9 @@ class ReindexJob < ActiveJob::Base
     descendants.each do |uri|
       begin
         ActiveFedora::Base.find(ActiveFedora::Base.uri_to_id(uri)).update_index
-        Rails.logger.info "#{uri} reindexed"
+        logger.info "#{uri} reindexed"
       rescue
-        Rails.logger.error "Error reindexing #{uri}"
+        logger.error "Error reindexing #{uri}"
       end
     end
   end
