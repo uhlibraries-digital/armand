@@ -1,11 +1,13 @@
 fits_path: "/opt/fits/fits.sh"
 
+derivatives_path: <%= Rails.root.join('tmp', 'derivatives') %>
+
 armand:
   name: Repository Name
   host: example.com
   oai_url: http://example.com/catalog/oai
-  oai_prefix: 'oai:localhost'
-  oai_admin_email: 'admin@localhost'
+  oai_prefix: "oai:localhost"
+  oai_admin_email: "admin@localhost"
 
 hybridge:
   filesystem: /var/ingest
@@ -32,7 +34,7 @@ cas:
   create_user: true
   email_attribute: :email
 
-campus_ip: 
+campus_ip:
   - 192.168.1.0/24
 
 iiif:
