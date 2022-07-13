@@ -86,3 +86,4 @@ gem "recaptcha"
 gem 'flexirest', '1.3.33'
 gem 'with_locking'
 gem 'blacklight_oai_provider'
+gem "sidekiq-cron"

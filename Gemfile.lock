@@ -271,6 +271,8 @@ GEM
     equivalent-xml (0.6.0)
       nokogiri (>= 1.4.3)
     erubi (1.8.0)
+    et-orbi (1.2.7)
+      tzinfo
     execjs (2.7.0)
     factory_bot (5.0.2)
       activesupport (>= 4.2.0)
@@ -297,6 +299,9 @@ GEM
       jquery-rails
     font-awesome-rails (4.7.0.5)
       railties (>= 3.2, < 6.1)
+    fugit (1.5.3)
+      et-orbi (~> 1, >= 1.2.7)
+      raabro (~> 1.4)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     google-api-client (0.30.4)
@@ -573,6 +578,7 @@ GEM
       nokogiri (~> 1.6)
       rails (~> 5.0)
       rdf
+    raabro (1.4.0)
     rack (2.0.7)
     rack-protection (2.0.5)
       rack
@@ -754,6 +760,9 @@ GEM
       rack (>= 1.5.0)
       rack-protection (>= 1.5.0)
       redis (>= 3.3.5, < 5)
+    sidekiq-cron (1.4.0)
+      fugit (~> 1)
+      sidekiq (>= 4.2.1)
     signet (0.11.0)
       addressable (~> 2.3)
       faraday (~> 0.9)
@@ -824,14 +833,14 @@ GEM
       active-triples
       activemodel
       activerecord
-      activesupport
+      activesupport (~> 5.1.7)
       draper
       dry-struct
       dry-types (~> 0.12.0)
       json
       json-ld
       railties
-      rdf
+      rdf (~> 3.0.10)
       reform
       reform-rails
     warden (1.2.8)
@@ -888,6 +897,7 @@ DEPENDENCIES
   selenium-webdriver
   shoulda-matchers
   sidekiq
+  sidekiq-cron
   solr_wrapper (>= 0.3)
   spring
   spring-watcher-listen (~> 2.0.0)
@@ -901,4 +911,4 @@ DEPENDENCIES
   with_locking
 
 BUNDLED WITH
-   2.2.26
+   2.3.14
