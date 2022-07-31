@@ -6,6 +6,12 @@ GIT
       config
       rails (~> 5.1.6)
 
+GIT
+  remote: https://github.com/uhlibraries-digital/minimagick.git
+  revision: 575ba0fe1bedbb2309f9d4769f07507d1940392d
+  specs:
+    mini_magick (4.11.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -530,7 +536,6 @@ GEM
     mime-types (3.2.2)
       mime-types-data (~> 3.2015)
     mime-types-data (3.2019.0331)
-    mini_magick (4.9.3)
     mini_mime (1.0.2)
     mini_portile2 (2.4.0)
     minitest (5.11.3)
@@ -887,6 +892,7 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
+  mini_magick!
   pg
   puma (~> 3.7)
   rails (~> 5.1.6)
@@ -911,4 +917,4 @@ DEPENDENCIES
   with_locking
 
 BUNDLED WITH
-   2.3.14
+   2.3.19

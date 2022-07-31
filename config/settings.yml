@@ -1,6 +1,8 @@
 fits_path: "/opt/fits/fits.sh"
 
-derivatives_path: <%= Rails.root.join('tmp', 'derivatives') %>
+derivatives:
+  path: <%= Rails.root.join('tmp', 'derivatives') %>
+  tmp: <%= Rails.root.join('tmp', 'derivatives', 'tmp') %>
 
 armand:
   name: Repository Name
