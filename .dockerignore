@@ -10,4 +10,4 @@ config/settings/*
 config/settings.local.yml
 log
 fits.log
-ingest_packages/*
+ingest_packages
