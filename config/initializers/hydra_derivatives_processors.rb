@@ -4,31 +4,21 @@ require 'nokogiri'
 Hydra::Derivatives::Processors::Image.class_eval do
   def create_image
     xfrm = selected_layers(load_image_transformer)
-    workingfiles = [xfrm.path.dup]
     yield(xfrm) if block_given?
     xfrm.format(directives.fetch(:format))
     xfrm.quality(quality.to_s) if quality
     write_image(xfrm)
-    workingfiles << xfrm.path.dup
-
-    clear_working_files(workingfiles)
+    clear_working_files(xfrm.path.dup)
   end
 
-  def clear_working_files(workingfiles)
-    workingfiles.each do |file|
-      path = clean_path(file)
-      File.delete(path) if File.exist?(path)
+  def clear_working_files(workingfile)
+    filename = File.basename(workingfile, '.*')
+    path = File.dirname(workingfile)
+
+    list = Dir.glob("#{File.join(path, filename)}.*")
+    list.each do |file|
+      File.delete(file) if File.exist?(file)
     end
-  end
-
-  def layer?(file)
-    file =~ /\[\d+\]$/
-  end
-
-  def clean_path(file)
-    newfile = file
-    newfile = file.match(/(.*)\[\d+\]/)[1] if layer?(file)
-    newfile
   end
 end
 
