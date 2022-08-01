@@ -11,7 +11,9 @@ RUN apt-get update -q && apt-get install -y \
   imagemagick \
   zip \
   git \
-  openjdk-11-jre
+  openjdk-11-jre \
+  ghostscript \
+  ghostscript-x
 
 RUN mkdir /armand-app
 WORKDIR /armand-app
