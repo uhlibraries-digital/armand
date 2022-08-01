@@ -1,5 +1,1 @@
-:concurrency: 8
-production:
-  :concurrency: 4
-development:
-  :concurrency: 2
+:concurrency: <%= ENV["JOB_THREADS"] || 2 %>
