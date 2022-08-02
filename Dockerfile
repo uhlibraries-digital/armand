@@ -15,6 +15,9 @@ RUN apt-get update -q && apt-get install -y \
   ghostscript \
   ghostscript-x
 
+# Fix ImageMagick resource disk limit policy
+RUN sed -i 's|<policy domain="resource" name="disk" value="1GiB"/>|<!-- <policy domain="resource" name="disk" value="1GiB"/> -->|g' /etc/ImageMagick-6/policy.xml 
+
 RUN mkdir /armand-app
 WORKDIR /armand-app
 
