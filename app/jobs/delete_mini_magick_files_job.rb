@@ -9,7 +9,7 @@ class DeleteMiniMagickFilesJob < ActiveJob::Base
 
       if now >= time
         begin
-          File.delete(file) if File.file?(file)
+          File.delete(file) if File.exists?(file) && File.file?(file)
           logger.info "Deleted tmp file: #{file}"
         rescue
           logger.error "Could not delete file: #{file}"
