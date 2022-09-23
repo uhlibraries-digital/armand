@@ -19,6 +19,7 @@ services:
       - cantaloupe
       - memcached
       - workers
+      - idp
 
   db:
     image: postgres:13
@@ -83,6 +84,15 @@ services:
       - fcrepo
       - redis
       - solr
+
+  idp:
+    image: seanlw/fake-azuread
+    ports:
+      - 8888:8080
+    environment:
+      - SIMPLESAMLPHP_SP_ENTITY_ID=http://localhost:3000/users/saml/metadata
+      - SIMPLESAMLPHP_SP_ASSERTION_CONSUMER_SERVICE=http://localhost:3000/users/saml/auth
+      - SIMPLESAMLPHP_SP_SINGLE_LOGOUT_SERVICE=http://localhost:3000/users/saml/idp_sign_out
 
 volumes:
   db: null

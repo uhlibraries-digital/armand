@@ -23,7 +23,7 @@ class ApplicationController < ActionController::Base
   end
 
   def discard_flash_if_authenticated
-    if Settings.cas.active && flash[:alert] == "You are not authorized to access this page."
+    if Settings.saml.active && flash[:alert] == "You are not authorized to access this page."
       flash.delete(:alert)
     end
   end

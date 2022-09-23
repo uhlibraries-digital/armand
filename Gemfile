@@ -75,7 +75,8 @@ group :development, :test do
   gem 'rspec-rails'
 end
 
-gem 'devise_cas_authenticatable'
+gem 'devise_saml_authenticatable'
+gem 'ruby-saml', '~> 1.13.0'
 gem 'edtf-humanize'
 # gem 'riiif', '~> 2.0'
 gem 'config'

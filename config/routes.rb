@@ -18,13 +18,9 @@ Rails.application.routes.draw do
     concerns :oai_provider
     concerns :searchable
   end
-
-  if Settings.cas.active
-    devise_for :users, :controllers => { sessions: 'devise/cas_sessions' }
-  else
-    devise_for :users
-  end
-
+  
+  devise_for :users
+  
   mount Qa::Engine => '/authorities'
   mount Hyrax::Engine, at: '/'
   resources :welcome, only: 'index'
