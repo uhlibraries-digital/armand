@@ -25,6 +25,19 @@ Run Armand
 ```
 docker-compose up app
 ```
+### Authentication
+This instance of Avalon is setup to use SAML authentication. The development environment comes with a IDP [Fake AzureAD](https://hub.docker.com/r/seanlw/fake-azuread) with 2 users available. (NOTE: Fake AzureAD is not to be used in a production environment)
+
+Administrator Account:
+Username|Password
+---|---
+smithj|password
+
+Basic User Account:
+Username|Password
+---|---
+doej|password
+
 
 ## Dependencies
 
