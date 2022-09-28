@@ -381,7 +381,7 @@ form.new_user input[type='submit']:hover {
   }
 
   &.navbar-static-top {
-    background-color: $brick !important;
+    background-color: $brick  !important;
     border: none;
   }
 
@@ -437,6 +437,11 @@ textarea {
 
   &.homepage {
     margin-top: 0;
+  }
+
+  &.container-fluid {
+    padding-right: 0;
+    padding-left: 0;
   }
 }
 
