@@ -4,6 +4,9 @@ derivatives:
   path: <%= Rails.root.join('tmp', 'derivatives') %>
   tmp: <%= Rails.root.join('tmp', 'derivatives', 'tmp') %>
 
+uploads:
+  path: <%= Rails.root.join('tmp', 'uploads') %>
+
 armand:
   name: Repository Name
   host: example.com
