@@ -21,11 +21,11 @@ signed in %>
 
 <!-- application css -->
 <%= stylesheet_link_tag 'application' %>
+<%= stylesheet_link_tag 'https://apps.lib.uh.edu/uh-elements/libraries-branding.css' %>
 
 <!-- application js -->
 <%= javascript_include_tag 'application' %>
 <%= tinymce_assets if can? :update, ContentBlock %>
-<%= render 'shared/appearance_styles' %>
 
 <!-- Google Analytics -->
 <%= render partial: '/ga', formats: [:html] %>
