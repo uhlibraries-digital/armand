@@ -80,11 +80,11 @@ gem 'edtf-humanize'
 # gem 'riiif', '~> 2.0'
 gem 'config'
 gem 'hybridge', git: 'https://github.com/uhlibraries-digital/hybridge.git'
-gem 'sidekiq'
+gem 'sidekiq', '~> 5.2'
 gem 'font-awesome-rails', '~> 4.7'
 gem "recaptcha"
 gem 'flexirest', '1.3.33'
 gem 'with_locking'
 gem 'blacklight_oai_provider'
-gem "sidekiq-cron"
+gem 'sidekiq-cron', '~> 1.4'
 gem 'mini_magick', git: 'https://github.com/uhlibraries-digital/minimagick.git'
