@@ -1,6 +1,6 @@
 class DeleteMiniMagickFilesJob < ActiveJob::Base
 
-  def perform
+  def perform(*args)
     files = Dir.glob(Settings.derivatives.tmp + '/*.*')
 
     files.each do |file|
