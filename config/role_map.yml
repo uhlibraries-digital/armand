@@ -1,10 +1,10 @@
 development:
   archivist:
     - archivist1@example.com
-    - slwatkins@uh.edu
+    - smithj@fakester.com
   admin:
-    - slwatkins@uh.edu
     - archivist1@example.com
+    - smithj@fakester.com
 
 test:
   admin:
