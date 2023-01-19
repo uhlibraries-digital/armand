@@ -74,3 +74,5 @@ email:
     address: smtp.example.com
     port: 25
     enable_starttls_auto: false
+
+google_analytics_tracking_id: ''
