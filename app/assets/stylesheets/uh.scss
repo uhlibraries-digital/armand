@@ -606,6 +606,12 @@ table.striped {
   background: #f6be00;
   border-color: #E6AC00;
   border-radius: 0;
+
+  a {
+    font-weight: inherit;
+    text-decoration: underline;
+    color: #960c22;
+  }
 }
 
 /* RESPONSIVE */

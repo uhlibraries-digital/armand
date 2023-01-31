@@ -24,7 +24,7 @@ class ApplicationController < ActionController::Base
   end
 
   def site_alert
-    @site_alert = Armand::AlertManager.find(Settings.alertmanager.id) rescue ''
+    @site_alert = Armand::AlertManager.find(Settings.alertmanager.id).html_safe rescue ''
   end
 
   def discard_flash_if_authenticated
