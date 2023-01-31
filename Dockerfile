@@ -48,5 +48,5 @@ RUN cd /app/valkyrie && \
   gem install -q nokogiri -v 1.12.5 && \
   gem install -q /app/valkyrie/valkyrie-2.0.0rc2.gem
 
-RUN gem install bundler && bundle install
+RUN gem install bundler -v 2.3.26 && bundle install
 ADD . /armand-app
