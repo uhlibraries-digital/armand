@@ -29,6 +29,10 @@ aspace:
   username: aspace
   password: password
 
+alertmanager:
+  endpoint: http://example.com/alert
+  id: 'armand'
+
 active_job:
   queue_adapter: :sidekiq
 
