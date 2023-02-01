@@ -29,6 +29,10 @@ aspace:
   username: aspace
   password: password
 
+alertmanager:
+  endpoint: http://example.com/alert
+  id: 'armand'
+
 active_job:
   queue_adapter: :sidekiq
 
@@ -74,3 +78,5 @@ email:
     address: smtp.example.com
     port: 25
     enable_starttls_auto: false
+
+google_analytics_tracking_id: ''

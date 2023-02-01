@@ -593,6 +593,27 @@ table.striped {
 
 }
 
+/* SITE ALERT */
+.site-alert {
+  width: 100%;
+  padding: 15px;
+  margin-bottom: 0;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1.25rem;
+  color: #000;
+  text-shadow: none;
+  background: #f6be00;
+  border-color: #E6AC00;
+  border-radius: 0;
+
+  a {
+    font-weight: inherit;
+    text-decoration: underline;
+    color: #960c22;
+  }
+}
+
 /* RESPONSIVE */
 @media (max-width: 992px) {
   .uhlib-links>ul {
