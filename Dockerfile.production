@@ -46,7 +46,8 @@ RUN cd /app/valkyrie && \
   gem install -q dry-configurable -v 0.12.1 && \
   gem install -q dry-container -v 0.7.2 && \
   gem install -q nokogiri -v 1.12.5 && \
-  gem install -q /app/valkyrie/valkyrie-2.0.0rc2.gem
+  gem install -q rails-html-sanitizer -v 1.5.0
+RUN gem install /app/valkyrie/valkyrie-2.0.0rc2.gem
 
 RUN gem install bundler -v 2.3.26 && bundle install
 ADD . /armand-app
