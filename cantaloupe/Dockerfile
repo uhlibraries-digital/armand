@@ -36,4 +36,4 @@ USER cantaloupe
 
 EXPOSE 8182
 HEALTHCHECK CMD curl --fail http://localhost:8182/ || exit 1
-CMD java -XX:MaxRAMPercentage=80 -XX:InitialRAMPercentage=50 -Dcantaloupe.config=/cantaloupe/cantaloupe.properties -jar /cantaloupe/cantaloupe.war
+CMD java $JAVA_OPTS -Dcantaloupe.config=/cantaloupe/cantaloupe.properties -jar /cantaloupe/cantaloupe.war
