@@ -34,7 +34,8 @@ RUN wget -q https://github.com/cantaloupe-project/cantaloupe/releases/download/v
 COPY ./delegates.rb /cantaloupe
 COPY ./cantaloupe.properties /cantaloupe
 
-RUN adduser --uid 99 --gid 99 --system --shell /bin/false cantaloupe
+RUN groupadd --system --gid 99 cantaloupe
+RUN useradd --uid 99 --gid 99 --system --shell /bin/false cantaloupe
 RUN chown -R cantaloupe: /cantaloupe
 USER cantaloupe
 
