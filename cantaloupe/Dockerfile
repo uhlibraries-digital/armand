@@ -25,7 +25,7 @@ RUN mkdir /cantaloupe && \
 WORKDIR /cantaloupe
 
 RUN cd /cantaloupe
-RUN wget https://github.com/cantaloupe-project/cantaloupe/releases/download/v4.1.9/cantaloupe-4.1.9.zip -O cantaloupe.zip && \
+RUN wget -q https://github.com/cantaloupe-project/cantaloupe/releases/download/v4.1.9/cantaloupe-4.1.9.zip -O cantaloupe.zip && \
   unzip cantaloupe.zip -d /cantaloupe && \
   mv ./cantaloupe-4.1.9/cantaloupe-4.1.9.war ./cantaloupe.war && \
   rm -Rf cantaloupe-4.1.9 && \
@@ -33,10 +33,6 @@ RUN wget https://github.com/cantaloupe-project/cantaloupe/releases/download/v4.1
 
 COPY ./delegates.rb /cantaloupe
 COPY ./cantaloupe.properties /cantaloupe
-
-RUN adduser --system cantaloupe
-RUN chown -R cantaloupe: /cantaloupe
-USER cantaloupe
 
 EXPOSE 8182
 HEALTHCHECK CMD curl --fail http://localhost:8182/ || exit 1
