@@ -10,7 +10,12 @@ build-development-cantaloupe:
   rules:
     - if: $CI_COMMIT_BRANCH == "development"
       changes:
+        - cantaloupe/VERSION
+      when: never 
+    - if: $CI_COMMIT_BRANCH == "development"
+      changes:
         - cantaloupe/**/*
+      when: always
   image: docker:20.10.16
   services:
     - docker:20.10.16-dind
