@@ -27,6 +27,28 @@ build-development-cantaloupe:
     - docker push $CI_REGISTRY_IMAGE/cantaloupe:$CI_COMMIT_SHORT_SHA
     - docker push $CI_REGISTRY_IMAGE/cantaloupe:latest-dev
 
+build-development-solr:
+  stage: build
+  rules:
+    - if: $CI_COMMIT_BRANCH == "development"
+      changes:
+        - solr/VERSION
+      when: never
+    - if: $CI_COMMIT_BRANCH == "development"
+      changes:
+        - solr/**/*
+      when: always
+  image: docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE/solr:$CI_COMMIT_SHORT_SHA ./solr
+    - docker build -t $CI_REGISTRY_IMAGE/solr:latest-dev ./solr
+    - docker push $CI_REGISTRY_IMAGE/solr:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY_IMAGE/solr:latest-dev
+
 build-production-cantaloupe:
   stage: build
   rules:
@@ -44,6 +66,24 @@ build-production-cantaloupe:
     - docker build -t $CI_REGISTRY_IMAGE/cantaloupe:latest ./cantaloupe
     - docker push $CI_REGISTRY_IMAGE/cantaloupe:$IMAGE_TAG
     - docker push $CI_REGISTRY_IMAGE/cantaloupe:latest
+
+build-production-solr:
+  stage: build
+  rules:
+    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+      changes:
+        - solr/VERSION
+  image: docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+    - IMAGE_TAG=$(cat solr/VERSION)
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE/solr:$IMAGE_TAG ./solr
+    - docker build -t $CI_REGISTRY_IMAGE/solr:latest ./solr
+    - docker push $CI_REGISTRY_IMAGE/solr:$IMAGE_TAG
+    - docker push $CI_REGISTRY_IMAGE/solr:latest
 
 build-production:
   stage: build
