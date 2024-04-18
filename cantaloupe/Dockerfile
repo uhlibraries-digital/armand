@@ -34,6 +34,10 @@ RUN wget -q https://github.com/cantaloupe-project/cantaloupe/releases/download/v
 COPY ./delegates.rb /cantaloupe
 COPY ./cantaloupe.properties /cantaloupe
 
+RUN adduser --system --shell /bin/false cantaloupe
+RUN chown -R cantaloupe /cantaloupe
+USER cantaloupe
+
 EXPOSE 8182
 HEALTHCHECK CMD curl --fail http://localhost:8182/ || exit 1
 CMD java $JAVA_OPTS -Dcantaloupe.config=/cantaloupe/cantaloupe.properties -jar /cantaloupe/cantaloupe.war
