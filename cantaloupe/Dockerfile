@@ -1,17 +1,21 @@
-FROM azul/zulu-openjdk-alpine:12
+FROM ubuntu:22.04
 
 ENV JAVA_OPTS=-Xmx2g
 
-RUN apk add --no-cache \
+RUN apt-get update && apt-get install -y \
   wget \
+  unzip \
+  ca-certificates \
+  imagemagick \
+  libmagickcore-6.q16-2-extra \
   ghostscript \
   ffmpeg \
-  freetype-dev \
-  libpng-dev \
-  jpeg-dev \
-  libjpeg-turbo-dev \
-  openjpeg-tools \
-  imagemagick
+  graphicsmagick \
+  curl \
+  libopenjp2-7-dev \
+  libopenjp2-tools \
+  libgs-dev \
+  openjdk-11-jre-headless
 
 RUN mkdir /cantaloupe && \
   mkdir /cantaloupe/lib && \
@@ -21,10 +25,10 @@ RUN mkdir /cantaloupe && \
 WORKDIR /cantaloupe
 
 RUN cd /cantaloupe
-RUN wget https://github.com/cantaloupe-project/cantaloupe/releases/download/v4.1.3/cantaloupe-4.1.3.zip -O cantaloupe.zip && \
+RUN wget https://github.com/cantaloupe-project/cantaloupe/releases/download/v4.1.9/cantaloupe-4.1.9.zip -O cantaloupe.zip && \
   unzip cantaloupe.zip -d /cantaloupe && \
-  mv ./cantaloupe-4.1.3/cantaloupe-4.1.3.war ./cantaloupe.war && \
-  rm -Rf cantaloupe-4.1.3 && \
+  mv ./cantaloupe-4.1.9/cantaloupe-4.1.9.war ./cantaloupe.war && \
+  rm -Rf cantaloupe-4.1.9 && \
   rm cantaloupe.zip
 
 COPY ./delegates.rb /cantaloupe
