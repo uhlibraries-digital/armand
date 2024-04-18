@@ -2,7 +2,16 @@ FROM azul/zulu-openjdk-alpine:12
 
 ENV JAVA_OPTS=-Xmx2g
 
-RUN apk add --no-cache wget
+RUN apk add --no-cache \
+  wget \
+  ghostscript \
+  ffmpeg \
+  freetype-dev \
+  libpng-dev \
+  jpeg-dev \
+  libjpeg-turbo-dev \
+  openjpeg-tools \
+  imagemagick
 
 RUN mkdir /cantaloupe && \
   mkdir /cantaloupe/lib && \
