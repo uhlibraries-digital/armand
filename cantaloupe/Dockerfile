@@ -25,10 +25,10 @@ RUN mkdir /cantaloupe && \
 WORKDIR /cantaloupe
 
 RUN cd /cantaloupe
-RUN wget -q https://github.com/cantaloupe-project/cantaloupe/releases/download/v4.1.9/cantaloupe-4.1.9.zip -O cantaloupe.zip && \
+RUN wget -q https://github.com/cantaloupe-project/cantaloupe/releases/download/v4.1.11/cantaloupe-4.1.11.zip -O cantaloupe.zip && \
   unzip cantaloupe.zip -d /cantaloupe && \
-  mv ./cantaloupe-4.1.9/cantaloupe-4.1.9.war ./cantaloupe.war && \
-  rm -Rf cantaloupe-4.1.9 && \
+  mv ./cantaloupe-4.1.11/cantaloupe-4.1.11.war ./cantaloupe.war && \
+  rm -Rf cantaloupe-4.1.11 && \
   rm cantaloupe.zip
 
 COPY ./delegates.rb /cantaloupe

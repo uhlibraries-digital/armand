@@ -27,10 +27,56 @@ build-development-cantaloupe:
     - docker push $CI_REGISTRY_IMAGE/cantaloupe:$CI_COMMIT_SHORT_SHA
     - docker push $CI_REGISTRY_IMAGE/cantaloupe:latest-dev
 
+build-development-solr:
+  stage: build
+  rules:
+    - if: $CI_COMMIT_BRANCH == "development"
+      changes:
+        - solr/VERSION
+      when: never
+    - if: $CI_COMMIT_BRANCH == "development"
+      changes:
+        - solr/**/*
+      when: always
+  image: docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE/solr:$CI_COMMIT_SHORT_SHA ./solr
+    - docker build -t $CI_REGISTRY_IMAGE/solr:latest-dev ./solr
+    - docker push $CI_REGISTRY_IMAGE/solr:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY_IMAGE/solr:latest-dev
+
+build-development-armand:
+  stage: build
+  rules:
+    - if: $CI_COMMIT_BRANCH == "development"
+      changes:
+        - cantaloupe/**/*
+      when: never 
+    - if: $CI_COMMIT_BRANCH == "development"
+      changes:
+        - solr/**/*
+      when: never 
+    - if: $CI_COMMIT_BRANCH == "development"
+      when: always
+  image: docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+    - docker build -f Dockerfile.production -t $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA .
+    - docker build -f Dockerfile.production -t $CI_REGISTRY_IMAGE:latest-dev .
+    - docker push $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
+    - docker push $CI_REGISTRY_IMAGE:latest-dev
+
 build-production-cantaloupe:
   stage: build
   rules:
-    - if: $CI_PIPELINE_SOURCE == 'merge_request_event'
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
       changes:
         - cantaloupe/VERSION
   image: docker:20.10.16
@@ -45,7 +91,25 @@ build-production-cantaloupe:
     - docker push $CI_REGISTRY_IMAGE/cantaloupe:$IMAGE_TAG
     - docker push $CI_REGISTRY_IMAGE/cantaloupe:latest
 
-build-production:
+build-production-solr:
+  stage: build
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+      changes:
+        - solr/VERSION
+  image: docker:20.10.16
+  services:
+    - docker:20.10.16-dind
+  before_script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_JOB_TOKEN $CI_REGISTRY
+    - IMAGE_TAG=$(cat solr/VERSION)
+  script:
+    - docker build -t $CI_REGISTRY_IMAGE/solr:$IMAGE_TAG ./solr
+    - docker build -t $CI_REGISTRY_IMAGE/solr:latest ./solr
+    - docker push $CI_REGISTRY_IMAGE/solr:$IMAGE_TAG
+    - docker push $CI_REGISTRY_IMAGE/solr:latest
+
+build-production-armand:
   stage: build
   rules:
     - if: $CI_COMMIT_TAG =~ /^v\d+\.\d+\..*$/
