@@ -1,9 +1,20 @@
+
+SIDEKIQ_PROC_JOB_FILE = Rails.root.join('tmp/sidekiq_processing').freeze
+
 Sidekiq.configure_server do |s|
   if ENV["RAILS_LOG_LEVEL"].present?
     s.logger.level = ENV["RAILS_LOG_LEVEL"].to_sym
   end
 
   ActiveJob::Base.logger = s.logger
+
+  s.on(:startup) do
+    FileUtils.touch(SIDEKIQ_PROC_JOB_FILE)
+  end
+
+  s.on(:shutdown) do
+    FileUtils.rm_f(SIDEKIQ_PROC_JOB_FILE)
+  end
 end
 
 begin
